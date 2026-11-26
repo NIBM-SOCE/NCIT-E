@@ -97,7 +97,7 @@
       "timeRequired": "PT3H",
       "isAccessibleForFree": true,
       "position": {{ s.n }}{% if s.slides %},
-      "hasPart": { "@type": "PresentationDigitalDocument", "name": {{ ptitle | append: ", slides" | jsonify }}, "url": "{{ s.slides | absolute_url }}", "encodingFormat": "application/vnd.openxmlformats-officedocument.presentationml.presentation" }{% endif %}
+      "hasPart": { "@type": "DigitalDocument", "name": {{ ptitle | append: ", slides" | jsonify }}, "url": "{{ s.slides | absolute_url }}", "encodingFormat": "application/pdf" }{% endif %}
       {%- endif %}
       {%- if page.schema == "frameworks" %},
       "hasDefinedTerm": [{% for e in site.data.frameworks.entries %}

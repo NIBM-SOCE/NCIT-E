@@ -29,7 +29,7 @@ layout: default
     <h2 id="h-res">Everything for this session</h2>
     <ul>
       {%- for d in page.demos %}<li><a href="demos/{{ d.file }}">Demonstration {{ d.n }}: {{ d.title }}</a>. {{ d.teaches }}</li>{% endfor %}
-      {%- if s.slides %}<li><a class="deck" href="{{ s.slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Slides for Session {{ s.n }} (PowerPoint)</a></li>{% endif %}
+      {%- if s.slides %}<li><a class="deck" href="{{ s.slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Slides for Session {{ s.n }} (PDF)</a></li>{% endif %}
     </ul>
   </section>
   {%- endif %}

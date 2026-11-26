@@ -44,7 +44,7 @@ description: "Candidate portal for NCIT-E, the Essentials level of the NIBM Cert
     <div>
       <h2>Opening</h2>
       <p>The programme at a glance, before Session 1.</p>
-      <a class="deck" href="{{ site.data.programme.opening_slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Opening slides (PowerPoint)</a>
+      <a class="deck" href="{{ site.data.programme.opening_slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Opening slides (PDF)</a>
     </div>
   </div>
   {%- endif %}
@@ -70,7 +70,7 @@ description: "Candidate portal for NCIT-E, the Essentials level of the NIBM Cert
           <span class="slot-label">{% if s.type == "Practical" %}PRACTICAL{% else %}CONTACT{% endif %} | WEEK {{ s.week }}</span>
           <h3>{% if p %}<a href="{{ s.url | relative_url }}">Session {{ s.n }}: {{ s.title }}</a>{% else %}Session {{ s.n }}: {{ s.title }}{% endif %}<span class="done-mark">Done</span></h3>
           {%- if s.ilos.size > 0 %}<div class="meta" style="margin:.2rem 0 0">{% include ilo-badges.html ilos=s.ilos %}</div>{% endif %}
-          {%- if s.slides %}<a class="deck" href="{{ s.slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Slides (PowerPoint)</a>{% endif %}
+          {%- if s.slides %}<a class="deck" href="{{ s.slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Slides (PDF)</a>{% endif %}
           {%- if p.demos %}{% for d in p.demos %}<a class="deck" href="{{ s.url | relative_url }}demos/{{ d.file }}"><img src="{{ '/assets/img/icons/m1.svg' | relative_url }}" alt="" width="18" height="18">Demonstration {{ d.n }}: {{ d.title }}</a>{% endfor %}{% endif %}
           {%- unless p %}{% unless s.slides %}<p class="soon">Coming soon.</p>{% endunless %}{% endunless %}
           {%- if s.slides %}{% unless p %}<p class="soon">Notes coming soon.</p>{% endunless %}{% endif %}
