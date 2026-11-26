@@ -1,0 +1,47 @@
+---
+layout: page
+title: Frameworks and short forms
+subtitle: The frameworks behind this programme, and every short form, explained in one place.
+description: "Plain-English guide to the frameworks and short forms used in the NIBM Certified ICT Teacher programme: UNESCO ICT Competency Framework for Teachers, Universal Design for Learning, Sri Lanka Qualifications Framework, NIE syllabus versions, G.C.E. Ordinary and Advanced Level, and PRIMM."
+og_image: /assets/img/og/frameworks.png
+schema: frameworks
+---
+{%- assign fw = site.data.frameworks -%}
+<p class="lede">This programme uses a few short forms and a few big frameworks. Here each one is explained in plain English. Start with the cards: each one gives the idea in one line. Select a card to read more.</p>
+
+<ul class="glance" aria-label="At a glance">
+{%- for e in fw.entries %}
+  <li><a href="#{{ e.id }}"><span class="ab">{{ e.ab }}</span><span class="full">{{ e.full }}</span><span class="gist">{{ e.gist }}</span></a></li>
+{%- endfor %}
+</ul>
+
+{%- for e in fw.entries %}
+<section class="fw" id="{{ e.id }}" aria-labelledby="h-{{ e.id }}">
+  <h2 id="h-{{ e.id }}"><span class="ab">{{ e.ab }}</span> <span class="full">{{ e.full }}</span></h2>
+  {%- if e.img %}
+  <figure class="fw-art"><img src="{{ '/assets/img/frameworks/' | append: e.img | relative_url }}" alt="{{ e.alt | escape }}" width="760" height="{{ e.ih }}" loading="lazy" decoding="async"></figure>
+  {%- endif %}
+  {{ e.body | markdownify }}
+  {%- if e.facts %}
+  <dl class="facts">
+    {%- for f in e.facts %}<dt>{{ f[0] }}</dt><dd>{{ f[1] }}</dd>{% endfor %}
+  </dl>
+  {%- endif %}
+  <div class="box key"><p><strong>In this programme.</strong> {{ e.inprog }}{% if e.link %} <a href="{{ e.link.url | relative_url }}">{{ e.link.title }}</a>.{% endif %}</p></div>
+  {%- if e.source %}
+  <p class="src">Source: <a href="{{ e.source.url }}" rel="noopener">{{ e.source.title }}</a></p>
+  {%- endif %}
+  <p class="back"><a href="#main">Back to the cards</a></p>
+</section>
+{%- endfor %}
+
+<section class="fw" id="others" aria-labelledby="h-others">
+  <h2 id="h-others">Other short forms</h2>
+  <table>
+    <thead><tr><th scope="col">Short form</th><th scope="col">Meaning</th></tr></thead>
+    <tbody>
+    {%- for o in fw.others %}<tr><td><strong>{{ o[0] }}</strong></td><td>{{ o[1] }}</td></tr>{% endfor %}
+    </tbody>
+  </table>
+  <p>For the programme's own words, such as notional hours, evidence band and misconception, see <a href="{{ '/glossary/' | relative_url }}">Words to know</a>.</p>
+</section>

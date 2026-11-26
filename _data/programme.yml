@@ -41,6 +41,6 @@ ilos:
   - { n: 5, text: "Apply safe, lawful and ethical practice to a given classroom, online or AI-use scenario, identifying the risk and stating the action a teacher takes." }
   - { n: 6, text: "Locate your own teaching within the national ICT curriculum pathway and the NCIT-E scope of practice, given the syllabus documents for your band, naming the syllabus version taught against and two evidenced development priorities." }
 feeds:
-  A1: "A1 objective test"
-  A2: "A2 lesson package"
-  A3: "A3 micro-teach"
+  A1: "the objective test"
+  A2: "the lesson package"
+  A3: "the micro-teach"

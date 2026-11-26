@@ -1,0 +1,13 @@
+---
+layout: null
+sitemap: false
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for p in site.pages %}{% unless p.sitemap == false or p.noindex %}
+  <url><loc>{{ p.url | replace: "index.html", "" | absolute_url | xml_escape }}</loc><lastmod>{{ site.time | date_to_xmlschema }}</lastmod></url>
+{%- endunless %}{% endfor %}
+{%- for f in site.static_files %}{% if f.extname == ".html" %}
+  <url><loc>{{ f.path | absolute_url | xml_escape }}</loc><lastmod>{{ f.modified_time | date_to_xmlschema }}</lastmod></url>
+{%- endif %}{% endfor %}
+</urlset>

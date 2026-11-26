@@ -1,18 +1,127 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-{%- if page.session_code -%}{%- assign s = site.data.programme.sessions | where: "code", page.session_code | first -%}{%- endif -%}
+{%- if page.session_code -%}{%- assign s = site.data.programme.sessions | where: "code", page.session_code | first -%}{%- assign su = site.data.programme.units | where: "code", s.unit | first -%}{%- endif -%}
 {%- capture ptitle -%}{%- if s -%}Session {{ s.n }}: {{ s.title }}{%- elsif page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}{%- endcapture -%}
-<title>{% if page.url == "/" %}{{ site.title }} ({{ site.code }}) | NIBM{% else %}{{ ptitle }} | {{ site.code }}{% endif %}</title>
-<meta name="description" content="{{ page.description | default: site.description | strip_html | strip_newlines | escape }}">
-<link rel="canonical" href="{{ page.url | absolute_url }}">
-<meta name="theme-color" content="#1B2559">
+{%- capture fulltitle -%}{%- if page.url == "/" -%}{{ site.title }} ({{ site.code }}) | {{ site.institution }}{%- else -%}{{ ptitle }} | {{ site.title }}{%- endif -%}{%- endcapture -%}
+{%- assign pdesc = page.description | default: site.description | strip_html | strip_newlines | strip -%}
+{%- assign canon = page.url | replace: "index.html", "" | absolute_url -%}
+{%- assign ogimg = page.og_image | default: "/assets/img/og/home.png" -%}
+{%- capture ogalt -%}{%- if page.og_image -%}{{ ptitle }}, {{ site.title }}{%- else -%}{{ site.title }}: a teacher at a chalkboard in a Sri Lankan classroom{%- endif -%}{%- endcapture -%}
+<title>{{ fulltitle }}</title>
+<meta name="description" content="{{ pdesc | escape }}">
+<link rel="canonical" href="{{ canon }}">
+<meta name="robots" content="{% if page.noindex %}noindex, follow{% else %}index, follow, max-image-preview:large, max-snippet:-1{% endif %}">
+<meta name="author" content="{{ site.institution }}, {{ site.school }}">
+<meta name="application-name" content="{{ site.title }}">
+<meta name="theme-color" content="#FFFDEE">
+<meta name="format-detection" content="telephone=no">
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | relative_url }}" type="image/svg+xml">
-<meta property="og:type" content="website">
+<link rel="icon" href="{{ '/assets/img/favicon-32.png' | relative_url }}" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+<link rel="sitemap" type="application/xml" href="{{ '/sitemap.xml' | relative_url }}">
+<meta property="og:type" content="{% if page.url == '/' %}website{% else %}article{% endif %}">
 <meta property="og:site_name" content="{{ site.title }}">
 <meta property="og:title" content="{{ ptitle | escape }}">
-<meta property="og:description" content="{{ page.description | default: site.description | strip_html | strip_newlines | escape }}">
-<meta property="og:url" content="{{ page.url | absolute_url }}">
+<meta property="og:description" content="{{ pdesc | escape }}">
+<meta property="og:url" content="{{ canon }}">
 <meta property="og:locale" content="en_GB">
+<meta property="og:image" content="{{ ogimg | absolute_url }}">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{ ogalt | escape }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ ptitle | escape }}">
+<meta name="twitter:description" content="{{ pdesc | escape }}">
+<meta name="twitter:image" content="{{ ogimg | absolute_url }}">
+<meta name="twitter:image:alt" content="{{ ogalt | escape }}">
+{%- assign root = "/" | absolute_url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "EducationalOrganization",
+      "@id": "{{ root }}#nibm",
+      "name": {{ site.institution | jsonify }},
+      "alternateName": "NIBM",
+      "url": "https://www.nibm.lk/",
+      "address": { "@type": "PostalAddress", "addressCountry": "LK" }
+    },
+    {
+      "@type": "EducationalOrganization",
+      "@id": "{{ root }}#soce",
+      "name": {{ site.school | jsonify }},
+      "parentOrganization": { "@id": "{{ root }}#nibm" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ root }}#website",
+      "url": "{{ root }}",
+      "name": {{ site.title | jsonify }},
+      "alternateName": {{ site.code | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en-GB",
+      "publisher": { "@id": "{{ root }}#soce" }
+    },
+    {
+      "@type": "Course",
+      "@id": "{{ root }}#course",
+      "name": {{ site.title | jsonify }},
+      "courseCode": {{ site.code | jsonify }},
+      "description": "Teacher professional development for ICT teachers in Sri Lanka, Grade 6 to Advanced Level: planning, teaching and assessing ICT lessons, including in classrooms without a working computer laboratory, and finding and changing learners' misconceptions.",
+      "url": "{{ root }}",
+      "provider": { "@id": "{{ root }}#soce" },
+      "inLanguage": "en",
+      "educationalLevel": "Teacher professional development",
+      "educationalCredentialAwarded": {{ site.title | jsonify }},
+      "numberOfCredits": 3,
+      "timeRequired": "PT150H",
+      "audience": { "@type": "EducationalAudience", "educationalRole": "teacher" },
+      "teaches": ["Teaching ICT from Grade 6 to Advanced Level", "Finding and changing learners' misconceptions", "Teaching ICT with few or no devices", "Universal Design for Learning", "Lesson planning and assessment for ICT"]
+    },
+    {
+      "@type": {% if page.url == "/" %}"WebPage"{% elsif s %}["WebPage", "LearningResource"]{% elsif page.schema == "frameworks" or page.url == "/glossary/" %}["WebPage", "DefinedTermSet"]{% else %}"WebPage"{% endif %},
+      "@id": "{{ canon }}#page",
+      "url": "{{ canon }}",
+      "name": {{ ptitle | jsonify }},
+      "description": {{ pdesc | jsonify }},
+      "inLanguage": "en-GB",
+      "isPartOf": { "@id": "{{ root }}#website" },
+      "about": { "@id": "{{ root }}#course" },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ ogimg | absolute_url }}", "width": 1200, "height": 630 }
+      {%- if s %},
+      "learningResourceType": "Session notes",
+      "educationalLevel": "Teacher professional development",
+      "timeRequired": "PT3H",
+      "isAccessibleForFree": true,
+      "position": {{ s.n }}{% if s.slides %},
+      "hasPart": { "@type": "PresentationDigitalDocument", "name": {{ ptitle | append: ", slides" | jsonify }}, "url": "{{ s.slides | absolute_url }}", "encodingFormat": "application/vnd.openxmlformats-officedocument.presentationml.presentation" }{% endif %}
+      {%- endif %}
+      {%- if page.schema == "frameworks" %},
+      "hasDefinedTerm": [{% for e in site.data.frameworks.entries %}
+        { "@type": "DefinedTerm", "name": {{ e.full | jsonify }}, "alternateName": {{ e.ab | jsonify }}, "description": {{ e.gist | jsonify }}, "url": "{{ canon }}#{{ e.id }}" }{% unless forloop.last %},{% endunless %}{% endfor %}
+      ]
+      {%- elsif page.url == "/glossary/" %},
+      "hasDefinedTerm": [{% assign gfirst = true %}{% for f in site.data.glossary %}{% for g in f[1] %}{% unless gfirst %},{% endunless %}{% assign gfirst = false %}
+        { "@type": "DefinedTerm", "name": {{ g[1].term | jsonify }}, "description": {{ g[1].def | strip_html | jsonify }} }{% endfor %}{% endfor %}
+      ]
+      {%- endif %}
+      {%- unless page.url == "/" %},
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ root }}" },
+          {% if s %}{ "@type": "ListItem", "position": 2, "name": {{ "Unit " | append: su.code | append: ": " | append: su.title | jsonify }}, "item": "{{ root }}#h-{{ su.code }}" },
+          { "@type": "ListItem", "position": 3, "name": {{ ptitle | jsonify }}, "item": "{{ canon }}" }{% else %}{ "@type": "ListItem", "position": 2, "name": {{ ptitle | jsonify }}, "item": "{{ canon }}" }{% endif %}
+        ]
+      }
+      {%- endunless %}
+    }
+  ]
+}
+</script>
 <link rel="preload" href="{{ '/assets/fonts/open-sans-latin-400-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 <script>document.documentElement.classList.add('js')</script>

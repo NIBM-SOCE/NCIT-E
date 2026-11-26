@@ -347,3 +347,32 @@ abbr[title]{text-decoration:underline dotted;text-underline-offset:.18em;cursor:
 .demo-card .demo-id{background:var(--maroon)}
 .demo-card{border-left-color:var(--maroon)}
 .demo-card .demo-title a{color:var(--navy)}
+/* Frameworks and short forms page */
+.lede{font-size:1.08rem}
+.glance{display:grid;grid-template-columns:repeat(auto-fill,minmax(13.5rem,1fr));gap:.85rem;margin:1.2rem 0 2rem;padding:0;list-style:none}
+.prose .glance{padding-left:0}
+.prose .glance li{margin:0;padding:0}
+.prose .glance li::marker{content:none}
+.glance a{display:flex;flex-direction:column;height:100%;background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:1rem 1.1rem;text-decoration:none;color:var(--ink);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.glance a:hover,.glance a:focus-visible{border-color:var(--navy);transform:translateY(-2px);box-shadow:0 8px 20px rgba(17,42,80,.08)}
+.glance .ab{font-size:1.45rem;font-weight:800;line-height:1.15;color:var(--maroon)}
+.glance .full{font-weight:700;color:var(--navy);margin:.35rem 0 .4rem;line-height:1.3}
+.glance .gist{font-size:.95rem;font-weight:400;color:var(--stone);line-height:1.45}
+.fw{scroll-margin-top:1rem;border-top:1px solid var(--hairline);margin-top:2rem;padding-top:1.4rem}
+.fw h2{margin-top:0;line-height:1.3}
+.fw h2 .ab{color:var(--maroon);margin-right:.3rem}
+.fw h2 .full{color:var(--navy)}
+.fw-art{margin:1rem 0 1.2rem}
+.fw-art img{display:block;width:100%;height:auto;border:1px solid var(--hairline);border-radius:14px}
+.facts{display:grid;grid-template-columns:minmax(8rem,max-content) 1fr;gap:.4rem 1.1rem;margin:1rem 0;padding:.9rem 1.1rem;background:var(--row);border-radius:12px}
+.facts dt{font-weight:700;color:var(--navy)}
+.facts dd{margin:0}
+@media (max-width:36rem){.facts{grid-template-columns:1fr}.facts dd{margin-bottom:.4rem}}
+.fw .src{font-size:.92rem;color:var(--stone)}
+.fw .back{font-size:.92rem;margin-top:.4rem}
+.fw:target{box-shadow:none}
+.fw:target h2 .ab{text-decoration:underline;text-decoration-color:var(--maroon-light);text-underline-offset:.2em}
+/* Footer links */
+.foot-nav{display:flex;flex-wrap:wrap;gap:.4rem 1.2rem;list-style:none;padding:0;margin:0 0 .8rem}
+.foot-nav a{font-weight:700}
+@media (prefers-reduced-motion:reduce){.glance a{transition:none}}

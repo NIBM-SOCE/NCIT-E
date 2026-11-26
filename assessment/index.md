@@ -1,4 +1,5 @@
 ---
+og_image: /assets/img/og/assessment.png
 layout: page
 title: Assessment
 subtitle: Three components, assessed in teaching weeks 16 and 17.
@@ -8,13 +9,13 @@ NCIT-E is examined and evidenced. You show what you know in a test, and what you
 
 | | Instrument | Weight | Component minimum |
 |---|---|---|---|
-| A1 | Invigilated objective test: 60 items, 90 minutes. One half on ICT content, one half on pedagogical judgement | 40% | 50% |
-| A2 | Lesson package: a plan, one resource, one assessment item, one misconception addressed, and one low-resource fallback | 35% | 50% |
-| A3 | Micro-teach: 8 minutes, one concept, live and recorded | 25% | 50% |
+| Objective test | Invigilated objective test: 60 items, 90 minutes. One half on ICT content, one half on pedagogical judgement | 40% | 50% |
+| Lesson package | Lesson package: a plan, one resource, one assessment item, one misconception addressed, and one low-resource fallback | 35% | 50% |
+| Micro-teach | Micro-teach: 8 minutes, one concept, live and recorded | 25% | 50% |
 
 To pass you need 60% overall, with no component below 50%. Merit is 75% and Distinction is 85%. Two resits are allowed within 12 months.
 
-A2 and A3 are produced in your own teaching band, and your transcript records the grade band at which you evidenced your competence. An AI-use declaration is submitted with A2.
+The lesson package and the micro-teach are produced in your own teaching band, and your transcript records the grade band at which you evidenced your competence. An AI-use declaration is submitted with the lesson package.
 
 ## When
 
@@ -26,4 +27,4 @@ Attend at least 16 of 20 sessions (80%). Practical sessions missed require a doc
 
 ## Briefs and rubrics
 
-Not yet issued. The A2 and A3 briefs and rubrics will be posted here when issued.
+Not yet issued. The lesson package and micro-teach briefs and rubrics will be posted here when issued.

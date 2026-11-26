@@ -1,5 +1,12 @@
 <footer class="site-footer">
   <div class="wrap">
+    <nav aria-label="Portal pages"><ul class="foot-nav">
+      <li><a href="{{ '/' | relative_url }}">Home</a></li>
+      <li><a href="{{ '/sessions/s01/' | relative_url }}">Session 1</a></li>
+      <li><a href="{{ '/assessment/' | relative_url }}">Assessment</a></li>
+      <li><a href="{{ '/glossary/' | relative_url }}">Words to know</a></li>
+      <li><a href="{{ '/frameworks/' | relative_url }}">Frameworks and short forms</a></li>
+    </ul></nav>
     <p>{{ site.code }} {{ site.title }}. {{ site.director_role }}: {{ site.director }}, <a href="mailto:{{ site.director_email }}">{{ site.director_email }}</a>.</p>
     <p>© 2026 {{ site.institution }}, {{ site.school }}. Content licensed <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>, code licensed MIT, Open Sans under the SIL Open Font Licence. The NIBM and NCIT names and the certified badge are not licensed.</p>
     <p>Your cohort timetable, submissions and assessment documents are issued by your programme team.</p>

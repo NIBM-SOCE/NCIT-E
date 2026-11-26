@@ -1,0 +1,144 @@
+# Frameworks and short forms page. Plain English for second-language readers.
+# Kit sources: 03 §1 (award), 06 §1 and §3 (pathway, versions), 07 §1 and §3 (UNESCO framework, SLQF),
+# 09 §2 (claims: "designed in alignment with", never "certified"). Owner ruling 26 November 2026: the
+# Ordinary Level syllabus versions. External facts checked 26 November 2026 against the linked sources.
+entries:
+  - id: ncit
+    ab: "NCIT-E"
+    full: "NIBM Certified ICT Teacher: Essentials"
+    gist: "This award. The first of three levels."
+    img: ladder.svg
+    ih: 320
+    alt: "Three rising steps: Essentials (NCIT-E, 3 credits), Associate (NCIT-A, 6 credits) and Professional (NCIT-P, 12 credits). Essentials is marked: you are here."
+    body: |
+      NCIT is the NIBM Certified ICT Teacher programme. It has three levels. The last letter names the level: **E** for Essentials, **A** for Associate and **P** for Professional.
+
+      Essentials is the level you are taking now. Each level matches one level of the UNESCO framework below.
+    facts:
+      - ["Awarded by", "National Institute of Business Management, School of Computing & Engineering"]
+      - ["Size", "3 credits on the Sri Lanka Qualifications Framework (150 notional hours)"]
+      - ["The three levels", "Essentials, 3 credits. Associate, 6 credits. Professional, 12 credits."]
+    inprog: "Your transcript names the award and your evidence band: the grade band where you showed your teaching skill."
+  - id: unesco
+    ab: "UNESCO ICT CFT"
+    full: "UNESCO ICT Competency Framework for Teachers"
+    gist: "The international framework this programme is built on."
+    img: ict-cft.svg
+    ih: 362
+    alt: "A grid of six aspects of a teacher's work by three levels: Knowledge Acquisition, Knowledge Deepening and Knowledge Creation. The Knowledge Acquisition column, where Essentials sits, is highlighted."
+    body: |
+      UNESCO is the United Nations Educational, Scientific and Cultural Organization. Its ICT Competency Framework for Teachers describes what teachers need to use ICT well in their work.
+
+      Version 3 was published in 2018. It crosses six aspects of a teacher's work with three levels. That makes 18 competencies.
+
+      | The framework's aspect | This programme's strand |
+      |---|---|
+      | Understanding ICT in Education Policy | Policy and Context |
+      | Curriculum and Assessment | Curriculum and Assessment |
+      | Pedagogy | Pedagogy and Learning Design |
+      | Application of Digital Skills | Digital Skills and Tools |
+      | Organization and Administration | Organisation and Safeguarding |
+      | Teacher Professional Learning | Professional Learning |
+    facts:
+      - ["Published by", "UNESCO, Paris"]
+      - ["Version", "Version 3, 2018"]
+      - ["Three levels", "Knowledge Acquisition, Knowledge Deepening, Knowledge Creation"]
+    inprog: "The six strands of this programme match the six aspects, one to one. Essentials matches Knowledge Acquisition. The programme is designed in alignment with the UNESCO ICT Competency Framework for Teachers (version 3). That alignment is the programme's own. It is not a UNESCO certification."
+    source: { title: "UNESCO ICT Competency Framework for Teachers, version 3 (UNESCO-UNEVOC)", url: "https://connect.unevoc.unesco.org/home/UNESCO+Publications/lang=en/akt=detail/qs=6106" }
+  - id: udl
+    ab: "UDL"
+    full: "Universal Design for Learning"
+    gist: "Plan every lesson for the whole range of learners, from the start."
+    img: udl.svg
+    ih: 310
+    alt: "Three cards: Engagement, the why of learning; Representation, the what of learning; Action and expression, the how of learning."
+    body: |
+      Universal Design for Learning is a way to plan lessons. You plan for the whole range of learners before you teach. You do not wait for a lesson to fail a learner and then fix it.
+
+      CAST, an education organisation in the United States, publishes the guidelines. Version 3.0 came out in July 2024. It keeps three principles.
+    facts:
+      - ["Published by", "CAST"]
+      - ["Version", "Version 3.0, July 2024"]
+      - ["Engagement", "The why of learning: interest, effort and choice"]
+      - ["Representation", "The what of learning: many ways to take in the content"]
+      - ["Action and expression", "The how of learning: many ways to show what you know"]
+    inprog: "Session 4, the accessibility and inclusive design workshop, uses the three principles. You change a real lesson plan with them, on paper, with no devices."
+    link: { title: "Unit M2, How People Learn Computing", url: "/#h-M2" }
+    source: { title: "The UDL Guidelines, version 3.0 (CAST)", url: "https://udlguidelines.cast.org/" }
+  - id: slqf
+    ab: "SLQF"
+    full: "Sri Lanka Qualifications Framework"
+    gist: "How Sri Lanka measures the level and size of a qualification."
+    img: slqf.svg
+    ih: 316
+    alt: "Three blocks of 50 notional hours, each one credit, make 150 notional hours: the 3 credits of Essentials. Below, the framework's 12 levels: 1 to 2 senior secondary, 3 to 6 undergraduate, 7 to 12 postgraduate."
+    body: |
+      The Sri Lanka Qualifications Framework sets the levels and the credits of qualifications in Sri Lanka. The University Grants Commission published the updated version in 2015.
+
+      A credit measures how much learning there is. One credit is 50 notional hours. Notional hours count all the time a typical learner needs: time in sessions and time studying alone.
+    facts:
+      - ["Published by", "University Grants Commission, Sri Lanka"]
+      - ["Version", "Updated version, 2015"]
+      - ["Levels", "12 levels. 1 and 2: senior secondary. 3 to 6: undergraduate. 7 to 12: postgraduate."]
+      - ["One credit", "50 notional hours"]
+    inprog: "Essentials is 3 credits: 150 notional hours. That is 60 guided hours with a tutor and 90 independent hours."
+    source: { title: "Sri Lanka Qualifications Framework (University Grants Commission)", url: "https://eugc.ugc.ac.lk/qac/slqf.html" }
+  - id: gce
+    ab: "O/L and A/L"
+    full: "G.C.E. Ordinary Level and Advanced Level"
+    gist: "The two national exams in ICT, after Grade 11 and after Grade 13."
+    img: exams.svg
+    ih: 296
+    alt: "Grades 6 to 9 study ICT as a curriculum subject with no national exam. Grades 10 and 11 lead to the G.C.E. Ordinary Level exam. Grades 12 and 13 lead to the G.C.E. Advanced Level exam. General Information Technology is for Advanced Level students who do not take ICT."
+    body: |
+      G.C.E. means General Certificate of Education. Learners sit the Ordinary Level exam at the end of Grade 11 and the Advanced Level exam at the end of Grade 13. The Department of Examinations runs both.
+
+      There is no formal ICT syllabus below Grade 6. Grades 6 to 9 study ICT as a curriculum subject, with no national exam. In this programme we write Ordinary Level and Advanced Level in full.
+    inprog: "These stages are the grade bands for your evidence band: Grades 6 to 9, Ordinary Level, General Information Technology, or Advanced Level."
+  - id: git
+    ab: "GIT"
+    full: "General Information Technology"
+    gist: "An Advanced Level subject for students who do not take ICT."
+    body: |
+      General Information Technology is taken by Advanced Level students who do not study ICT as a subject. It started at Grade 12 in 2002. National exams began in 2005.
+
+      Many schools have many of these classes. They are often given to any teacher who is free, not always an ICT specialist. This programme is open to those teachers too.
+    inprog: "General Information Technology is one of the grade bands you can show your skill in."
+  - id: nie
+    ab: "NIE"
+    full: "National Institute of Education"
+    gist: "Develops the national school syllabuses and teacher's guides."
+    img: versions-pin.svg
+    ih: 316
+    alt: "The syllabus versions this programme teaches against. Grades 6 to 9: NIE material from 2018. Ordinary Level Grade 10: NIE syllabus implemented from 2015. Grade 11: implemented from 2016. Advanced Level: the 2017 NIE syllabus."
+    body: |
+      The National Institute of Education develops the national school syllabuses and the teacher's guides that go with them.
+
+      Every syllabus has a version, named by the year it was first used. During the education reform, from 2026 to 2031, versions change one grade at a time. So this programme always names the version and its year.
+    facts:
+      - ["Grades 6 to 9", "NIE material, published from 2018 (Grade 6)"]
+      - ["Ordinary Level, Grade 10", "NIE syllabus implemented from 2015"]
+      - ["Ordinary Level, Grade 11", "NIE syllabus implemented from 2016"]
+      - ["Advanced Level", "The 2017 NIE syllabus"]
+    inprog: "These are the latest versions this programme holds, and the ones it teaches against. When a new version is confirmed in force, the materials are reviewed. Session 1 teaches the three-question version check."
+    link: { title: "Session 1: the version check", url: "/sessions/s01/" }
+  - id: primm
+    ab: "PRIMM"
+    full: "Predict, Run, Investigate, Modify, Make"
+    gist: "Five steps for teaching programming."
+    img: primm.svg
+    ih: 224
+    alt: "Five tiles in order: P for Predict, R for Run, I for Investigate, M for Modify, M for Make."
+    body: |
+      PRIMM is a way to teach programming in five steps. Learners read code and predict what it does before they run it. They write their own code last.
+
+      Prediction comes first because it shows the learner's thinking before the computer corrects it. The method was developed by Sue Sentance, Jane Waite and Maria Kallia.
+    inprog: "Session 3 takes a short Scratch program through all five steps. No device? Learners act it out."
+    link: { title: "Unit M2, How People Learn Computing", url: "/#h-M2" }
+others:
+  - ["ICT", "Information and Communication Technology. The name of the school subject in Sri Lanka."]
+  - ["AI", "Artificial intelligence. Taught in Unit M8, Teaching Digital Safety, Ethics and AI Literacy."]
+  - ["NIBM", "National Institute of Business Management. It awards this programme."]
+  - ["UNESCO", "United Nations Educational, Scientific and Cultural Organization."]
+  - ["UGC", "University Grants Commission, Sri Lanka. It publishes the Sri Lanka Qualifications Framework."]
+  - ["CAST", "The education organisation that publishes the Universal Design for Learning guidelines."]

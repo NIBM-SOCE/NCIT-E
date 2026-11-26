@@ -1,0 +1,16 @@
+{
+  "name": "NIBM Certified ICT Teacher: Essentials",
+  "short_name": "NCIT-E portal",
+  "description": "Candidate portal: session notes, slides, demonstrations and independent study.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#FFFDEE",
+  "theme_color": "#FFFDEE",
+  "lang": "en-GB",
+  "icons": [
+    { "src": "/assets/img/favicon.svg", "type": "image/svg+xml", "sizes": "any" },
+    { "src": "/assets/img/apple-touch-icon.png", "type": "image/png", "sizes": "180x180" },
+    { "src": "/assets/img/icon-512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}

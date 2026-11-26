@@ -1,4 +1,5 @@
 ---
+og_image: /assets/img/og/s01.png
 session_code: S01
 demos:
   - n: 1
@@ -11,11 +12,11 @@ demos:
     teaches: "Rate the six strands with evidence, see your profile as a chart, choose two priorities and the units that address them."
 description: "What NCIT-E certifies, why teaching ICT is its own job, where your teaching sits in the national ICT pathway, why every lesson needs a syllabus version, how the programme runs, and your baseline practice profile."
 outcomes:
-  - "Locate a named ICT topic in the national pathway from Grade 6 to A/L, given the NIE syllabus documents for your teaching band, stating its grade, the topic that precedes it and the syllabus version, with no unversioned syllabus reference."
+  - "Locate a named ICT topic in the national pathway from Grade 6 to Advanced Level, given the National Institute of Education syllabus documents for your teaching band, stating its grade, the topic that precedes it and the syllabus version, with no unversioned syllabus reference."
   - "Identify the version risk in a given lesson-planning scenario during the 2026 to 2031 reform transition, stating which band's syllabus is stable, which is under revision, and the check a teacher makes before teaching."
   - "Produce a baseline practice profile against the six NCIT-E strands, given the scope-of-practice statement and the strand descriptors, rating current practice on each strand with one piece of evidence per rating and naming two development priorities."
 before:
-  - "The NIE syllabus, teacher's guide or textbook for one grade you teach. Paper or a photo on your phone is fine"
+  - "The National Institute of Education syllabus, teacher's guide or textbook for one grade you teach. Paper or a photo on your phone is fine"
   - "One lesson you taught recently that went well, and one that did not. You will use them in the profile"
 ---
 
@@ -38,14 +39,14 @@ Read it slowly, because every unit and every assessment comes from it. It makes 
 2. **Without a laboratory.** Most ICT classrooms in Sri Lanka do not have a reliable lab, reliable power, or a device for every learner. A credential that assumed they did would certify something most holders could not use. So every content unit has a version that runs on chalk and paper, one phone, or no power.
 3. **Misconceptions.** You can find out what a learner wrongly believes about an ICT concept, and teach so that the belief changes.
 
-The second sentence matters too. NCIT-E is open to teachers from Grade 6 to A/L. The award certifies your teaching competence, and your transcript records the {% include term.html t="evidence-band" %} in which you showed it.
+The second sentence matters too. NCIT-E is open to teachers from Grade 6 to Advanced Level. The award certifies your teaching competence, and your transcript records the {% include term.html t="evidence-band" %} in which you showed it.
 
 <div class="box key" markdown="1">
-NCIT-E certifies **pedagogical competence**: the ability to teach ICT well. It does not certify that you have mastered the content of every grade. The skills you build here, such as finding a misconception and designing a lesson around it, work at Grade 7 and at A/L. What changes between bands is the depth of the content they sit inside.
+NCIT-E certifies **pedagogical competence**: the ability to teach ICT well. It does not certify that you have mastered the content of every grade. The skills you build here, such as finding a misconception and designing a lesson around it, work at Grade 7 and at Advanced Level. What changes between bands is the depth of the content they sit inside.
 </div>
 
 <div class="qc" data-answer="b" markdown="0">
-  <p class="qc-q">A teacher completes NCIT-E with an A2 lesson package and A3 micro-teach drawn from their Grade 8 class. What does the evidence band on their transcript record?</p>
+  <p class="qc-q">A teacher completes NCIT-E with a lesson package and a micro-teach drawn from their Grade 8 class. What does the evidence band on their transcript record?</p>
   <ul class="qc-opts">
     <li data-key="a">That they may teach only Grade 6 to 9 from now on</li>
     <li data-key="b">That their competence was shown at Grade 6 to 9</li>
@@ -80,28 +81,28 @@ Think of one ICT concept your learners got wrong even after you explained it cle
 
 ## 3. The national ICT pathway
 
-ICT enters the school curriculum at Grade 6 and builds through to A/L. There is no formal ICT syllabus below Grade 6, which is why NCIT-E's band starts there.
+ICT enters the school curriculum at Grade 6 and builds through to Advanced Level. There is no formal ICT syllabus below Grade 6, which is why NCIT-E's band starts there.
 
-<figure class="diagram" markdown="0"><img src="img/pathway.svg" alt="The national ICT pathway: no formal ICT syllabus below Grade 6; Foundation, Grades 6 to 9; G.C.E. O/L, Grades 10 and 11; G.C.E. A/L, Grades 12 and 13; and GIT at A/L, introduced at Grade 12 in 2002 and examined nationally from 2005." loading="lazy"><figcaption>The pathway from Grade 6 to A/L. The NCIT-E band covers all of it.</figcaption></figure>
+<figure class="diagram" markdown="0"><img src="img/pathway.svg" alt="The national ICT pathway: no formal ICT syllabus below Grade 6; Foundation, Grades 6 to 9; G.C.E. Ordinary Level, Grades 10 and 11; G.C.E. Advanced Level, Grades 12 and 13; and General Information Technology at Advanced Level, introduced at Grade 12 in 2002 and examined nationally from 2005." loading="lazy"><figcaption>The pathway from Grade 6 to Advanced Level. The NCIT-E band covers all of it.</figcaption></figure>
 
 | Stage | Grades | Character | Status |
 |---|---|---|---|
 | Foundation | 6 to 9 | Progressive ICT competencies: practical use, computing concepts, programming exposure, Internet and web skills | Curriculum subject; not a G.C.E. subject |
-| G.C.E. O/L | 10 to 11 | Computer systems, data representation, logic, operating systems, productivity tools, databases, programming | Formal G.C.E. O/L subject |
-| G.C.E. A/L | 12 to 13 | Architecture, data representation, digital logic, operating systems, networking, systems analysis and design, databases, programming, web, IoT, project work | Advanced subject with a G.C.E. A/L examination |
+| G.C.E. Ordinary Level | 10 to 11 | Computer systems, data representation, logic, operating systems, productivity tools, databases, programming | Formal G.C.E. Ordinary Level subject |
+| G.C.E. Advanced Level | 12 to 13 | Architecture, data representation, digital logic, operating systems, networking, systems analysis and design, databases, programming, web, IoT, project work | Advanced subject with a G.C.E. Advanced Level examination |
 
-Alongside A/L ICT there is **GIT** (General Information Technology), introduced at Grade 12 in 2002 with national examinations from 2005. It is taken by A/L students who are not taking ICT. It is a high-volume subject and is often assigned to whichever teacher is available.
+Alongside Advanced Level ICT there is **General Information Technology**, introduced at Grade 12 in 2002 with national examinations from 2005. It is taken by Advanced Level students who are not taking ICT. It is a high-volume subject and is often assigned to whichever teacher is available.
 
-The pathway matters for planning because topics return. Networking appears in the foundation grades, again with more formality at O/L, and as a full area at A/L. When you teach a topic you need to know what your learners met before, and what the next stage will expect of them.
+The pathway matters for planning because topics return. Networking appears in the foundation grades, again with more formality at Ordinary Level, and as a full area at Advanced Level. When you teach a topic you need to know what your learners met before, and what the next stage will expect of them.
 
 <div class="qc" data-answer="c" markdown="0">
   <p class="qc-q">A principal asks whether NCIT-E covers Grade 4 ICT. What is the accurate answer?</p>
   <ul class="qc-opts">
     <li data-key="a">Yes: the band is open, so every grade is covered</li>
-    <li data-key="b">No: NCIT-E covers O/L and A/L only</li>
-    <li data-key="c">No: there is no formal ICT syllabus below Grade 6, so the band runs from Grade 6 to A/L</li>
+    <li data-key="b">No: NCIT-E covers Ordinary Level and Advanced Level only</li>
+    <li data-key="c">No: there is no formal ICT syllabus below Grade 6, so the band runs from Grade 6 to Advanced Level</li>
   </ul>
-  <div class="qc-why"><p>Answer: (c). The band is open from Grade 6 to A/L. Grade 6 is the floor because that is where the formal ICT syllabus begins, not because of a programme choice.</p></div>
+  <div class="qc-why"><p>Answer: (c). The band is open from Grade 6 to Advanced Level. Grade 6 is the floor because that is where the formal ICT syllabus begins, not because of a programme choice.</p></div>
 </div>
 
 ## 4. Syllabus versions: teaching during a reform transition
@@ -110,21 +111,21 @@ Sri Lanka is inside a 2026 to 2031 education reform transition. Reforms roll out
 
 This is the position the programme records for each band:
 
-<figure class="diagram" markdown="0"><img src="img/versions.svg" alt="Timeline from 2016 to 2031 with the reform transition shaded from 2026. Grades 6 to 9: 2018 material, stable. O/L: Grade 10 reported revised in 2026 while the roadmap indicates 2028, so unconfirmed; Grade 11 revision planned 2027. A/L: the 2017 syllabus is current." loading="lazy"><figcaption>Three bands, three positions. Only the O/L version is unconfirmed.</figcaption></figure>
+<figure class="diagram" markdown="0"><img src="img/versions.svg" alt="Timeline from 2016 to 2031 with the reform transition shaded from 2026. Grades 6 to 9: 2018 material, stable. Ordinary Level: in use here, the 2015 (Grade 10) and 2016 (Grade 11) syllabuses; a Grade 10 revision reported for 2026 or 2028 is unconfirmed; Grade 11 revision planned 2027. Advanced Level: the 2017 syllabus is current." loading="lazy"><figcaption>Three bands, three positions. Only the Ordinary Level revision is unconfirmed. Until it is, the programme uses the 2015 and 2016 syllabuses.</figcaption></figure>
 
 | Band | Syllabus version |
 |---|---|
-| Grades 6 to 9 | NIE Grade 6 to 9 ICT material, published from 2018 (Grade 6). The most stable band at present |
-| O/L (Grades 10 and 11) | **Unconfirmed.** Grade 10 ICT has been reported as revised in 2026, while the reform roadmap indicates Grade 10 implementation in 2028. The two reports have not been reconciled, so the programme treats the O/L version as unconfirmed until NIE confirms which applies. A Grade 11 revision is planned for 2027 |
-| A/L (Grades 12 and 13) | The 2017 syllabus is the current published NIE syllabus |
+| Grades 6 to 9 | National Institute of Education Grade 6 to 9 ICT material, published from 2018 (Grade 6). The most stable band at present |
+| Ordinary Level (Grades 10 and 11) | **In use here:** the National Institute of Education syllabus implemented from 2015 (Grade 10) and from 2016 (Grade 11), the latest versions the programme holds. **Not yet confirmed:** Grade 10 ICT has been reported as revised in 2026, while the reform roadmap indicates Grade 10 implementation in 2028. A Grade 11 revision is planned for 2027. Check which version your class uses |
+| Advanced Level (Grades 12 and 13) | The 2017 syllabus is the current published National Institute of Education syllabus |
 
-The rule that follows is simple: **always name the {% include term.html t="syllabus-version" %}.** "The current O/L syllabus" does not tell anyone which document you mean. In a transition, a lesson built from it can mix content from an older version with content from a revision that is not yet taught.
+The rule that follows is simple: **always name the {% include term.html t="syllabus-version" %}.** "The current Ordinary Level syllabus" does not tell anyone which document you mean. In a transition, a lesson built from it can mix content from an older version with content from a revision that is not yet taught.
 
 <div class="box key" markdown="1">
 **The version check.** Before you plan a lesson, answer three questions:
 
 1. Which syllabus document, with its year, am I teaching from?
-2. Is that the version in force for this grade this year? Check with your school, zonal office or NIE, not only with the latest document you can find.
+2. Is that the version in force for this grade this year? Check with your school, zonal office or National Institute of Education, not only with the latest document you can find.
 3. Do my textbook and the past papers I use match that version?
 </div>
 
@@ -136,23 +137,23 @@ The rule that follows is simple: **always name the {% include term.html t="sylla
 
 <div class="demo-card" markdown="0"><span class="demo-id">DEMO 1</span><div><p class="demo-title"><a href="demos/s01-d1-pathway-versions.html">Where a grade sits, and which syllabus it uses</a></p><p class="demo-teaches">Pick a grade you teach: its stage, what comes before and after, the version on record, and the version check for your own class.</p></div></div>
 
-This programme follows the same rule. Every unit states the syllabus version it was written against. Until the O/L position is confirmed, the units build the Grade 6 to 9 and A/L material first and add the O/L extensions once the version is known.
+This programme follows the same rule. Every unit states the syllabus version it was written against. For Ordinary Level, the units use the latest version the programme holds: the National Institute of Education syllabus implemented from 2015 for Grade 10 and from 2016 for Grade 11. When a newer version is confirmed in force, the materials are reviewed. All the versions are listed on [Frameworks and short forms](/frameworks/#nie).
 
 <div class="qc" data-answer="a" markdown="0">
-  <p class="qc-q">A colleague says: "I'm planning next term from the current O/L syllabus." What is the risk, and what should they do first?</p>
+  <p class="qc-q">A colleague says: "I'm planning next term from the current Ordinary Level syllabus." What is the risk, and what should they do first?</p>
   <ul class="qc-opts">
-    <li data-key="a">The version is not named, and O/L is mid-revision. They should check which version is in force for their grade this year before planning</li>
-    <li data-key="b">There is no risk: O/L changes only when A/L changes</li>
+    <li data-key="a">The version is not named, and Ordinary Level is mid-revision. They should check which version is in force for their grade this year before planning</li>
+    <li data-key="b">There is no risk: Ordinary Level changes only when Advanced Level changes</li>
     <li data-key="c">The risk is only in the textbook. They should buy the newest edition</li>
   </ul>
-  <div class="qc-why"><p>Answer: (a). O/L is the band under revision, and an unversioned reference can mix two versions. The version check comes first. A new textbook may or may not match the version in force.</p></div>
+  <div class="qc-why"><p>Answer: (a). Ordinary Level is the band under revision, and an unversioned reference can mix two versions. The version check comes first. A new textbook may or may not match the version in force.</p></div>
 </div>
 
 ## 5. How this programme works
 
 ### Hours
 
-NCIT-E is **3 SLQF credits (150 notional hours)**. {% include term.html t="notional-hours" text="Notional hours" %} count everything a typical candidate needs to reach the outcomes:
+NCIT-E is **3 credits on the Sri Lanka Qualifications Framework (150 notional hours)**. {% include term.html t="notional-hours" text="Notional hours" %} count everything a typical candidate needs to reach the outcomes:
 
 - **60 {% include term.html t="guided-hours" %}** with a tutor: 45 in contact sessions and 15 in practical sessions;
 - **90 hours of {% include term.html t="independent-study" %}** between sessions.
@@ -267,11 +268,11 @@ Assessment is in teaching weeks 16 and 17, in three components:
 
 | | What | Weight |
 |---|---|---|
-| A1 | An invigilated objective test, half on ICT content and half on pedagogical judgement | 40% |
-| A2 | A lesson package for your own class: a plan, a resource, an assessment item, a misconception addressed and a low-resource fallback | 35% |
-| A3 | An 8-minute micro-teach of one concept | 25% |
+| Objective test | An invigilated objective test, half on ICT content and half on pedagogical judgement | 40% |
+| Lesson package | A lesson package for your own class: a plan, a resource, an assessment item, a misconception addressed and a low-resource fallback | 35% |
+| Micro-teach | An 8-minute micro-teach of one concept | 25% |
 
-To pass you need 60% overall, with no component below 50%. Full details are on the [assessment page](../../assessment/). Every session from now on builds towards A2 and A3, so keep your independent study work: much of it becomes your lesson package.
+To pass you need 60% overall, with no component below 50%. Full details are on the [assessment page](../../assessment/). Every session from now on builds towards the lesson package and the micro-teach, so keep your independent study work: much of it becomes your lesson package.
 
 ## 8. Today's session
 
@@ -290,7 +291,7 @@ Six notional hours, to complete before Session 2. Your tutor will tell you how t
 
 | Task | Outcome | Notional hours | What to do |
 |---|---|---|---|
-| IS-1 Pathway map | 1 | 2 | Choose three topics you teach. For each, using the syllabus document for your band: the grade where it sits, the topic that comes before it, the topic it leads to, and the syllabus version with its year. No unversioned references |
-| IS-2 Version check | 2 | 1 | For one grade you teach, answer the three version-check questions from section 4 for your own school. Record any mismatch between syllabus, textbook and past papers |
-| IS-3 Baseline profile | 3 | 3 | Complete the profile in section 6 with a rating and evidence for every strand. Name two development priorities and the units that address them |
+| Task 1: Pathway map | 1 | 2 | Choose three topics you teach. For each, using the syllabus document for your band: the grade where it sits, the topic that comes before it, the topic it leads to, and the syllabus version with its year. No unversioned references |
+| Task 2: Version check | 2 | 1 | For one grade you teach, answer the three version-check questions from section 4 for your own school. Record any mismatch between syllabus, textbook and past papers |
+| Task 3: Baseline profile | 3 | 3 | Complete the profile in section 6 with a rating and evidence for every strand. Name two development priorities and the units that address them |
 | | | **6** | |

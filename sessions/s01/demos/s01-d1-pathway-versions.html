@@ -5,7 +5,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Session 1, demo 1: Where a grade sits, and which syllabus it uses | NCIT-E</title>
+<title>Session 1, demonstration 1: Where a grade sits, and which syllabus it uses | NIBM Certified ICT Teacher</title>
+<meta name="description" content="Interactive demonstration: choose a grade from 6 to 13 and see its stage, its syllabus version and the three-question version check. Works offline.">
+<link rel="canonical" href="https://ncit-e.teach.lk/sessions/s01/demos/s01-d1-pathway-versions.html">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#FFFDEE">
+<link rel="icon" href="../../../assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="NIBM Certified ICT Teacher: Essentials">
+<meta property="og:title" content="Session 1, demonstration 1: Where a grade sits, and which syllabus it uses">
+<meta property="og:url" content="https://ncit-e.teach.lk/sessions/s01/demos/s01-d1-pathway-versions.html">
+<meta property="og:description" content="Interactive demonstration: choose a grade from 6 to 13 and see its stage, its syllabus version and the three-question version check. Works offline.">
+<meta property="og:image" content="https://ncit-e.teach.lk/assets/img/og/s01.png">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 @font-face{font-family:"Open Sans";font-weight:400;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-400-normal.woff2") format("woff2")}
 @font-face{font-family:"Open Sans";font-weight:700;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-700-normal.woff2") format("woff2")}
@@ -66,7 +78,7 @@ main{max-width:58rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
 <main>
   <p class="what"><strong>What this shows:</strong> pick a grade you teach. You see where it sits in the national pathway, what comes before and after it, and the syllabus version the programme records for it. Then you run the three-question version check for your own class.</p>
 
-  <div class="band" aria-hidden="true"><span>FOUNDATION</span><span>G.C.E. O/L</span><span>G.C.E. A/L</span></div>
+  <div class="band" aria-hidden="true"><span>FOUNDATION</span><span>ORDINARY LEVEL</span><span>ADVANCED LEVEL</span></div>
   <div class="road" role="group" aria-label="Choose a grade">
     <button class="g" type="button" data-g="6" aria-pressed="false">6<small>GRADE</small></button>
     <button class="g" type="button" data-g="7" aria-pressed="false">7<small>GRADE</small></button>
@@ -87,15 +99,15 @@ main{max-width:58rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
       <p class="kv"><b>Syllabus version: </b><span id="status"></span></p>
       <p class="kv" id="version"></p>
       <div class="flow" id="flow"></div>
-      <label class="git" id="gitrow" hidden><input type="checkbox" id="git"> I teach GIT (General Information Technology), not A/L ICT</label>
+      <label class="git" id="gitrow" hidden><input type="checkbox" id="git"> I teach General Information Technology, not Advanced Level ICT</label>
     </div>
     <div class="check">
       <h3>The version check, for your class</h3>
       <label><input type="checkbox" class="q"> I know which syllabus document, with its year, I teach from</label>
-      <label><input type="checkbox" class="q"> I have confirmed it is the version in force for this grade this year, with my school, zonal office or NIE</label>
+      <label><input type="checkbox" class="q"> I have confirmed it is the version in force for this grade this year, with my school, zonal office or the National Institute of Education</label>
       <label><input type="checkbox" class="q"> My textbook and the past papers I use match that version</label>
       <div class="doc"><label for="docname" style="display:block;margin:0 0 .25rem">Document and year</label>
-        <input id="docname" type="text" placeholder="For example: NIE Grade 8 ICT teacher's guide, 2018"></div>
+        <input id="docname" type="text" placeholder="For example: National Institute of Education Grade 8 ICT teacher's guide, 2018"></div>
       <p class="result" id="result">Tick the three checks and name the document.</p>
     </div>
   </section>
@@ -103,34 +115,34 @@ main{max-width:58rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
 
   <section class="saw">
     <h2>WHAT YOU JUST SAW</h2>
-    <p>The pathway is one subject over eight grades in three stages, so every topic you teach has a before and an after. The bands are not on the same footing during the reform transition: Grades 6 to 9 and A/L have a recorded version, while the O/L version is unconfirmed. That is why the programme never says "the current syllabus" without naming the document and its year, and why the version check comes before any lesson plan.</p>
+    <p>The pathway is one subject over eight grades in three stages, so every topic you teach has a before and an after. The bands are not on the same footing during the reform transition: Every band has a recorded version, but at Ordinary Level a newer version has been reported and not yet confirmed. That is why the programme never says "the current syllabus" without naming the document and its year, and why the version check comes before any lesson plan.</p>
   </section>
 </main>
 <script>
 (function () {
   "use strict";
   var V = {
-    found: { cls: "stable", label: "Stable", text: "NIE Grade 6 to 9 ICT material, published from 2018 (Grade 6). The most stable band at present." },
-    g10: { cls: "unconfirmed", label: "Unconfirmed", text: "Grade 10 ICT has been reported as revised in 2026, while the reform roadmap indicates Grade 10 implementation in 2028. The two reports have not been reconciled, so the programme treats the version as unconfirmed until NIE confirms which applies." },
-    g11: { cls: "check", label: "Check before planning", text: "A Grade 11 revision is planned for 2027. Confirm which version your Grade 11 class is taught and examined on." },
-    al: { cls: "stable", label: "Recorded", text: "The 2017 syllabus is the current published NIE syllabus for A/L." },
-    git: { cls: "check", label: "Check its own syllabus", text: "GIT has its own syllabus, separate from A/L ICT. The programme does not record its version: check the GIT syllabus document and its year." }
+    found: { cls: "stable", label: "Stable", text: "National Institute of Education Grade 6 to 9 ICT material, published from 2018 (Grade 6). The most stable band at present." },
+    g10: { cls: "check", label: "Recorded: check before planning", text: "The programme uses the National Institute of Education syllabus implemented from 2015, the latest version it holds. A Grade 10 revision has been reported for 2026, and the reform plan points to 2028. Neither is confirmed, so check which version your class is taught and examined on." },
+    g11: { cls: "check", label: "Recorded: check before planning", text: "The programme uses the National Institute of Education syllabus implemented from 2016, the latest version it holds. A Grade 11 revision is planned for 2027. Confirm which version your Grade 11 class is taught and examined on." },
+    al: { cls: "stable", label: "Recorded", text: "The 2017 syllabus is the current published National Institute of Education syllabus for Advanced Level." },
+    git: { cls: "check", label: "Check its own syllabus", text: "General Information Technology has its own syllabus, separate from Advanced Level ICT. The programme does not record its version: check that syllabus document and its year." }
   };
   var G = {
     6: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
     7: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
     8: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
     9: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
-    10: ["G.C.E. O/L (Grades 10 and 11)", "Formal G.C.E. O/L subject", "g10"],
-    11: ["G.C.E. O/L (Grades 10 and 11)", "Formal G.C.E. O/L subject", "g11"],
-    12: ["G.C.E. A/L (Grades 12 and 13)", "Advanced subject with a G.C.E. A/L examination", "al"],
-    13: ["G.C.E. A/L (Grades 12 and 13)", "Advanced subject with a G.C.E. A/L examination", "al"]
+    10: ["G.C.E. Ordinary Level (Grades 10 and 11)", "Formal G.C.E. Ordinary Level subject", "g10"],
+    11: ["G.C.E. Ordinary Level (Grades 10 and 11)", "Formal G.C.E. Ordinary Level subject", "g11"],
+    12: ["G.C.E. Advanced Level (Grades 12 and 13)", "Advanced subject with a G.C.E. Advanced Level examination", "al"],
+    13: ["G.C.E. Advanced Level (Grades 12 and 13)", "Advanced subject with a G.C.E. Advanced Level examination", "al"]
   };
   var COVERS = {
     found: "Practical use, computing concepts, programming exposure, Internet and web skills.",
     ol: "Computer systems, data representation, logic, operating systems, productivity tools, databases, programming.",
     al: "Architecture, data representation, digital logic, operating systems, networking, systems analysis and design, databases, programming, web, IoT, project work.",
-    git: "General Information Technology, introduced at Grade 12 in 2002 with national examinations from 2005, for A/L students not taking ICT."
+    git: "General Information Technology, introduced at Grade 12 in 2002 with national examinations from 2005, for Advanced Level students not taking ICT."
   };
   var grade = null;
   var $ = function (id) { return document.getElementById(id); };
@@ -139,8 +151,8 @@ main{max-width:58rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
     if (grade === null) { return; }
     var info = G[grade], gitOn = grade >= 12 && $("git").checked;
     var v = gitOn ? V.git : V[info[2]];
-    $("title").textContent = "Grade " + grade + (gitOn ? ", GIT" : "");
-    $("stage").innerHTML = "<b>Stage: </b>" + (gitOn ? "G.C.E. A/L, GIT" : info[0]) + ". " + info[1] + ".";
+    $("title").textContent = "Grade " + grade + (gitOn ? ", General Information Technology" : "");
+    $("stage").innerHTML = "<b>Stage: </b>" + (gitOn ? "G.C.E. Advanced Level, General Information Technology" : info[0]) + ". " + info[1] + ".";
     $("covers").innerHTML = "<b>Covers: </b>" + (gitOn ? COVERS.git : COVERS[stageKey(grade)]);
     $("status").innerHTML = '<span class="status ' + v.cls + '">' + v.label + "</span>";
     $("version").textContent = v.text;
