@@ -24,6 +24,13 @@ layout: default
 
   {{ content }}
 
+  {%- if page.slides %}
+  <section class="resources" aria-labelledby="h-res">
+    <h2 id="h-res">Everything for this session</h2>
+    <ul><li><a href="slides/{{ page.slides }}">Slides for this session (PowerPoint)</a></li></ul>
+  </section>
+  {%- endif %}
+
   <div class="progress-box">
     <button class="btn" type="button" data-progress="{{ s.code }}">Mark this session as done</button>
     <span class="progress-note">Saved only on this device, as a record for you. It never locks or unlocks anything.</span>

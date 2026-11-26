@@ -1,5 +1,6 @@
 ---
 session_code: S01
+slides: ncit-e-s01-orientation.pptx
 description: "What NCIT-E certifies, why teaching ICT is its own job, where your teaching sits in the national ICT pathway, why every lesson needs a syllabus version, how the programme runs, and your baseline practice profile."
 outcomes:
   - "Locate a named ICT topic in the national pathway from Grade 6 to A/L, given the NIE syllabus documents for your teaching band, stating its grade, the topic that precedes it and the syllabus version, with no unversioned syllabus reference."
