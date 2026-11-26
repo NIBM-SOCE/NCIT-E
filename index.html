@@ -1,57 +1,80 @@
 ---
 layout: default
 wide: true
-description: "Candidate portal for NCIT-E, the Essentials level of the NIBM Certified ICT Teacher programme: session notes, activities and independent study for each unit."
+description: "Candidate portal for NCIT-E, the Essentials level of the NIBM Certified ICT Teacher programme: session notes, slides, activities and independent study for each unit."
 ---
 <div class="wrap-wide">
-  <img class="hero" src="{{ '/assets/img/hero.svg' | relative_url }}" width="840" height="300" alt="A road winds up through blue hills towards a rising sun, passing nine milestones, one for each unit from M1 to M9.">
+  <img class="hero" src="{{ '/assets/img/hero.svg' | relative_url }}" width="960" height="330" alt="An ivory road winds from a school up through hills to a rising sun, passing nine numbered milestones, one for each unit from M1 to M9.">
 
   <div class="scope">
     <span class="label">WHAT AN NCIT-E HOLDER CAN DO</span>
     <p>An NCIT-E holder can plan, teach, and assess ICT lessons, including in classrooms without a functioning computer laboratory, and can identify and address the misconceptions learners commonly form about ICT concepts. Competence was evidenced at the grade band recorded on the transcript.</p>
   </div>
 
-  <p class="intro">This portal holds your materials for NCIT-E, unit by unit. Each session has notes you can study on your own, the activities used in class, and the independent study that follows it. Independent study is 90 of the award's 150 notional hours, so the notes are written to be used between sessions, not only during them.</p>
+  <p class="intro">This portal holds your materials for NCIT-E, unit by unit. Each session has notes you can study on your own, the slides used in class, the activities, and the independent study that follows. Independent study is 90 of the award's 150 notional hours, so the notes are written to be used between sessions, not only during them.</p>
 
   <ul class="facts">
     <li><b>150</b><span>notional hours: 60 guided (45 contact, 15 practical) and 90 independent study. 3 SLQF credits</span></li>
-    <li><b>20 sessions</b><span>of 3 hours over 15 teaching weeks: 15 contact sessions and 5 practical sessions</span></li>
-    <li><b>16 of 20</b><span>Attend at least 16 of 20 sessions (80%). Practical sessions missed require a documented make-up.</span></li>
+    <li><b>20</b><span>sessions of 3 hours over 15 teaching weeks: 15 contact sessions and 5 practical sessions</span></li>
   </ul>
 
   <ul class="quicklinks">
-    <li><a href="{{ '/opening/ncit-e-prelude.pptx' | relative_url }}">Opening slides (PowerPoint)</a></li>
     <li><a href="{{ '/sessions/s01/' | relative_url }}">Start with Session 1</a></li>
     <li><a href="{{ '/assessment/' | relative_url }}">Assessment</a></li>
     <li><a href="{{ '/glossary/' | relative_url }}">Words to know</a></li>
   </ul>
 
+  <h2 class="section-title">Your fifteen weeks</h2>
+  <div class="timeline"><img src="{{ '/assets/img/timeline.svg' | relative_url }}" width="1000" height="230" alt="Twenty sessions over fifteen teaching weeks. One contact session each week. Weeks 3, 4, 5, 6 and 14 also carry a practical session: sessions 4, 6, 8, 9 and 19. Weeks 16 and 17 are the assessment window."></div>
+
+  <h2 class="section-title">Units, sessions and slides</h2>
+
+  {%- if site.data.programme.opening_slides %}
+  <div class="opening">
+    <div class="unit-icon"><img src="{{ '/assets/img/icons/open.svg' | relative_url }}" alt="" width="28" height="28"></div>
+    <div>
+      <h2>Opening</h2>
+      <p>The programme at a glance, before Session 1.</p>
+      <a class="deck" href="{{ site.data.programme.opening_slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Opening slides (PowerPoint)</a>
+    </div>
+  </div>
+  {%- endif %}
+
   {%- assign sessions = site.data.programme.sessions -%}
   {%- for u in site.data.programme.units %}
+  {%- assign first = sessions | where: "code", u.sessions[0] | first %}
   <section class="unit" aria-labelledby="h-{{ u.code }}">
-    <h2 id="h-{{ u.code }}">Unit {{ u.code }}: {{ u.title }}</h2>
-    {%- assign first = sessions | where: "code", u.sessions[0] | first %}
-    <p class="when">{{ u.sessions.size }} session{% if u.sessions.size > 1 %}s{% endif %}, from teaching week {{ first.week }} | {{ u.notional }} notional hours</p>
+    <div class="unit-head">
+      <div class="unit-icon"><img src="{{ '/assets/img/icons/' | append: u.icon | append: '.svg' | relative_url }}" alt="" width="28" height="28"></div>
+      <div>
+        <h2 id="h-{{ u.code }}"><span class="code">{{ u.code }}</span> {{ u.title }}</h2>
+        <p class="when">{{ u.sessions.size }} session{% if u.sessions.size > 1 %}s{% endif %} from teaching week {{ first.week }} | {{ u.notional }} notional hours</p>
+      </div>
+    </div>
     <div class="cols">
     {%- for c in u.sessions %}
       {%- assign s = sessions | where: "code", c | first %}
       {%- assign p = site.pages | where: "session_code", s.code | first %}
       <div class="slot{% if s.type == 'Practical' %} practical{% endif %}" data-slot="{{ s.code }}">
-        <span class="slot-label">{% if s.type == "Practical" %}PRACTICAL SESSION{% else %}CONTACT SESSION{% endif %} | WEEK {{ s.week }}</span>
-        <h3>{% if p %}<a href="{{ s.url | relative_url }}">Session {{ s.n }}: {{ s.title }}</a>{% else %}Session {{ s.n }}: {{ s.title }}{% endif %}<span class="done-mark">Done</span></h3>
-        {%- if s.ilos.size > 0 %}<div class="meta" style="margin:.3rem 0 0">{% include ilo-badges.html ilos=s.ilos %}</div>{% endif %}
-        {%- unless p %}<p class="soon">Coming soon.</p>{% endunless %}
+        <span class="disc" aria-hidden="true">{{ s.n }}</span>
+        <div class="slot-body">
+          <span class="slot-label">{% if s.type == "Practical" %}PRACTICAL{% else %}CONTACT{% endif %} | WEEK {{ s.week }}</span>
+          <h3>{% if p %}<a href="{{ s.url | relative_url }}">Session {{ s.n }}: {{ s.title }}</a>{% else %}Session {{ s.n }}: {{ s.title }}{% endif %}<span class="done-mark">Done</span></h3>
+          {%- if s.ilos.size > 0 %}<div class="meta" style="margin:.2rem 0 0">{% include ilo-badges.html ilos=s.ilos %}</div>{% endif %}
+          {%- if s.slides %}<a class="deck" href="{{ s.slides | relative_url }}"><img src="{{ '/assets/img/icons/slides.svg' | relative_url }}" alt="" width="18" height="18">Slides (PowerPoint)</a>{% endif %}
+          {%- unless p %}{% unless s.slides %}<p class="soon">Coming soon.</p>{% endunless %}{% endunless %}
+          {%- if s.slides %}{% unless p %}<p class="soon">Notes coming soon.</p>{% endunless %}{% endif %}
+        </div>
       </div>
     {%- endfor %}
     </div>
   </section>
   {%- endfor %}
 
-  <section class="unit" aria-labelledby="h-assess">
-    <h2 id="h-assess">Assessment window</h2>
-    <p class="when">Teaching weeks 16 and 17. The Board of Examiners follows.</p>
-    <p>Three components: an objective test (A1), a lesson package (A2) and a micro-teach (A3). See <a href="{{ '/assessment/' | relative_url }}">Assessment</a>.</p>
+  <section class="assess-card" aria-labelledby="h-assess">
+    <h2 id="h-assess">Assessment window: teaching weeks 16 and 17</h2>
+    <p>Three components: an objective test (A1), a lesson package (A2) and a micro-teach (A3). The Board of Examiners follows. <a href="{{ '/assessment/' | relative_url }}">How you are assessed</a>.</p>
   </section>
 
-  <p class="progress-note">Designed in alignment with the UNESCO ICT Competency Framework for Teachers (v3). Mapped to the ISTE Standards for Educators. Composition: 43% pedagogy, 32% ICT content, 25% policy, assessment, safeguarding and professional practice.</p>
+  <p class="small-note">Designed in alignment with the UNESCO ICT Competency Framework for Teachers (v3). Mapped to the ISTE Standards for Educators. Composition: 43% pedagogy, 32% ICT content, 25% policy, assessment, safeguarding and professional practice.</p>
 </div>

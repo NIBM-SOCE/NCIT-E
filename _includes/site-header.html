@@ -1,5 +1,5 @@
 {%- if page.session_code -%}{%- assign s = site.data.programme.sessions | where: "code", page.session_code | first -%}{%- assign u = site.data.programme.units | where: "code", s.unit | first -%}{%- endif -%}
-<header class="site-header">
+<header class="site-header{% unless page.url == '/' %} art{% endunless %}">
   <div class="{% if page.wide %}wrap-wide{% else %}wrap{% endif %}">
     {%- if page.url == "/" %}
     <p class="eyebrow">{{ site.institution }} | {{ site.school }}</p>
@@ -7,12 +7,12 @@
     <p class="eyebrow"><a href="{{ '/' | relative_url }}">{{ site.code }} | {{ site.title }}</a></p>
     {%- endif %}
     {%- if s %}
-    <h1>Session {{ s.n }}: {{ s.title }}</h1>
+    <h1><span>Session {{ s.n }}:</span> <span class="em">{{ s.title }}</span></h1>
     <p class="sub">Unit {{ u.code }}, {{ u.title }} | Teaching week {{ s.week }} | {{ s.type }} session</p>
     {%- elsif page.url == "/" %}
     <div class="home-head">
       <div class="home-head-text">
-        <h1 class="one-line">{{ site.title }}</h1>
+        <h1 class="one-line"><span>NIBM Certified ICT Teacher:</span> <span class="em">Essentials</span></h1>
         <p class="sub">{{ site.code }} | 3 SLQF credits (150 notional hours) | 15 teaching weeks</p>
         <p class="sub focus">{{ site.focus }}</p>
       </div>

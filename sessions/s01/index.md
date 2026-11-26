@@ -1,6 +1,5 @@
 ---
 session_code: S01
-slides: ncit-e-s01-orientation.pptx
 description: "What NCIT-E certifies, why teaching ICT is its own job, where your teaching sits in the national ICT pathway, why every lesson needs a syllabus version, how the programme runs, and your baseline practice profile."
 outcomes:
   - "Locate a named ICT topic in the national pathway from Grade 6 to A/L, given the NIE syllabus documents for your teaching band, stating its grade, the topic that precedes it and the syllabus version, with no unversioned syllabus reference."
@@ -74,6 +73,8 @@ Think of one ICT concept your learners got wrong even after you explained it cle
 
 ICT enters the school curriculum at Grade 6 and builds through to A/L. There is no formal ICT syllabus below Grade 6, which is why NCIT-E's band starts there.
 
+<figure class="diagram" markdown="0"><img src="img/pathway.svg" alt="The national ICT pathway: no formal ICT syllabus below Grade 6; Foundation, Grades 6 to 9; G.C.E. O/L, Grades 10 and 11; G.C.E. A/L, Grades 12 and 13; and GIT at A/L, introduced at Grade 12 in 2002 and examined nationally from 2005." loading="lazy"><figcaption>The pathway from Grade 6 to A/L. The NCIT-E band covers all of it.</figcaption></figure>
+
 | Stage | Grades | Character | Status |
 |---|---|---|---|
 | Foundation | 6 to 9 | Progressive ICT competencies: practical use, computing concepts, programming exposure, Internet and web skills | Curriculum subject; not a G.C.E. subject |
@@ -99,6 +100,8 @@ The pathway matters for planning because topics return. Networking appears in th
 Sri Lanka is inside a 2026 to 2031 education reform transition. Reforms roll out grade by grade, so for several years different bands are on different versions, and some documents in circulation describe a version that is not yet in force.
 
 This is the position the programme records for each band:
+
+<figure class="diagram" markdown="0"><img src="img/versions.svg" alt="Timeline from 2016 to 2031 with the reform transition shaded from 2026. Grades 6 to 9: 2018 material, stable. O/L: Grade 10 reported revised in 2026 while the roadmap indicates 2028, so unconfirmed; Grade 11 revision planned 2027. A/L: the 2017 syllabus is current." loading="lazy"><figcaption>Three bands, three positions. Only the O/L version is unconfirmed.</figcaption></figure>
 
 | Band | Syllabus version |
 |---|---|
@@ -142,6 +145,8 @@ NCIT-E is **3 SLQF credits (150 notional hours)**. {% include term.html t="notio
 
 - **60 {% include term.html t="guided-hours" %}** with a tutor: 45 in contact sessions and 15 in practical sessions;
 - **90 hours of {% include term.html t="independent-study" %}** between sessions.
+
+<figure class="diagram" markdown="0"><img src="img/hours.svg" alt="A bar of 150 notional hours: 45 contact and 15 practical make 60 guided hours, and 90 hours are independent study." loading="lazy"><figcaption>Where the 150 notional hours go.</figcaption></figure>
 
 So most of the work happens between sessions. Averaged over 15 teaching weeks, independent study is about six hours a week. Some units ask for more: M2, which starts next week, carries 15. Plan your week around it now, not after the first deadline.
 
@@ -204,6 +209,8 @@ Every NCIT level is built on the same six {% include term.html t="strand" text="
 | S5 Organisation & Safeguarding | Applies safe practice | 13 |
 | S6 Professional Learning | Reflects; joins a network | 8 |
 | | **Total** | **150** |
+
+<figure class="diagram" markdown="0"><img src="img/strands.svg" alt="Notional hours by strand: S1 5, S2 11, S3 65, S4 48, S5 13, S6 8." loading="lazy"><figcaption>Notional hours by strand, 150 in total.</figcaption></figure>
 
 S3 is the largest strand by design: NCIT-E is 43% pedagogy, 32% ICT content, and 25% policy, assessment, safeguarding and professional practice.
 
