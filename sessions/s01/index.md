@@ -1,5 +1,14 @@
 ---
 session_code: S01
+demos:
+  - n: 1
+    title: "Where a grade sits, and which syllabus it uses"
+    file: s01-d1-pathway-versions.html
+    teaches: "Pick a grade: see its stage, what comes before and after, the syllabus version the programme records, and run the version check for your class."
+  - n: 2
+    title: "Your baseline practice profile"
+    file: s01-d2-baseline-profile.html
+    teaches: "Rate the six strands with evidence, see your profile as a chart, choose two priorities and the units that address them."
 description: "What NCIT-E certifies, why teaching ICT is its own job, where your teaching sits in the national ICT pathway, why every lesson needs a syllabus version, how the programme runs, and your baseline practice profile."
 outcomes:
   - "Locate a named ICT topic in the national pathway from Grade 6 to A/L, given the NIE syllabus documents for your teaching band, stating its grade, the topic that precedes it and the syllabus version, with no unversioned syllabus reference."
@@ -125,6 +134,8 @@ The rule that follows is simple: **always name the {% include term.html t="sylla
 - **"All grades change at once."** The reform is progressive by grade, so Grade 10 and Grade 12 can be on different versions in the same year.
 </div>
 
+<div class="demo-card" markdown="0"><span class="demo-id">DEMO 1</span><div><p class="demo-title"><a href="demos/s01-d1-pathway-versions.html">Where a grade sits, and which syllabus it uses</a></p><p class="demo-teaches">Pick a grade you teach: its stage, what comes before and after, the version on record, and the version check for your own class.</p></div></div>
+
 This programme follows the same rule. Every unit states the syllabus version it was written against. Until the O/L position is confirmed, the units build the Grade 6 to 9 and A/L material first and add the O/L extensions once the version is known.
 
 <div class="qc" data-answer="a" markdown="0">
@@ -241,6 +252,8 @@ A baseline is where you start, recorded honestly so that you can see your progre
 | S6 Professional Learning | | |
 
 </div>
+
+<div class="demo-card" markdown="0"><span class="demo-id">DEMO 2</span><div><p class="demo-title"><a href="demos/s01-d2-baseline-profile.html">Your baseline practice profile</a></p><p class="demo-teaches">Rate each strand with evidence and see your profile drawn as you go. Save it on your device or print it.</p></div></div>
 
 **Then name two development priorities.** For each: the strand, what you want to be able to do by the end of the programme, and the unit or units that address it (see the [unit list](../../)).
 

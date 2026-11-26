@@ -1,0 +1,177 @@
+<!doctype html>
+<!-- NCIT-E demo. Code: MIT licence. Content: CC BY-NC-SA 4.0, NIBM School of Computing & Engineering.
+     One file, no external scripts, works offline. Facts from NCIT KT Kit v3.4, 06 sections 1 and 3. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 1, demo 1: Where a grade sits, and which syllabus it uses | NCIT-E</title>
+<style>
+@font-face{font-family:"Open Sans";font-weight:400;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-weight:700;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-weight:800;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-800-normal.woff2") format("woff2")}
+:root{--canvas:#FFFDEE;--maroon:#8C013C;--petrol:#0A466B;--navy:#112A50;--crimson:#A3022A;--charcoal:#545454;--ink:#263232;--stone:#5E5E56;
+--surface:#F5F3F5;--hairline:#E3DFCC;--card:#FFFEF8;--maroon-tint:#F6E4EB;--petrol-tint:#E6EEF3;--font:"Open Sans","Segoe UI",Roboto,Calibri,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--canvas);line-height:1.55}
+header{border-bottom:1px solid var(--hairline);padding:1rem 1.1rem}
+header a{display:inline-block;background:var(--charcoal);color:#fff;border-radius:6px;padding:.2rem .6rem;font-size:.82rem;font-weight:700;text-decoration:none}
+header h1{margin:.5rem 0 0;font-size:1.35rem;line-height:1.25;color:var(--petrol)}
+header h1 span{color:var(--maroon)}
+main{max-width:58rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
+.what{margin:0 0 1rem}
+.road{display:grid;grid-template-columns:repeat(8,1fr);gap:.4rem;margin:0 0 .3rem}
+.band{display:grid;grid-template-columns:4fr 2fr 2fr;gap:.4rem;margin:0 0 1rem;font-size:.78rem;font-weight:800;letter-spacing:.06em;color:#fff}
+.band span{background:var(--charcoal);border-radius:6px;padding:.25rem .5rem;text-align:center}
+.g{font:inherit;font-weight:800;font-size:1.05rem;border:2px solid var(--hairline);background:var(--card);color:var(--navy);border-radius:12px;padding:.7rem 0;cursor:pointer;transition:transform .15s,background .15s,border-color .15s}
+.g small{display:block;font-size:.68rem;font-weight:700;color:var(--stone);letter-spacing:.04em}
+.g:hover{transform:translateY(-2px);border-color:var(--petrol)}
+.g[aria-pressed="true"]{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.g[aria-pressed="true"] small{color:#fff}
+.g:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.floor{font-size:.85rem;color:var(--stone);margin:.2rem 0 1rem}
+.panel{background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:1rem 1.2rem;display:grid;gap:1rem}
+@media (min-width:44rem){.panel{grid-template-columns:1.1fr 1fr}}
+.panel h2{margin:0 0 .3rem;font-size:1.2rem;color:var(--petrol)}
+.kv{margin:.35rem 0;font-size:.97rem}
+.kv b{color:var(--navy)}
+.status{display:inline-block;border-radius:8px;padding:.25rem .6rem;font-weight:800;font-size:.85rem;color:#fff}
+.status.stable{background:var(--petrol)}
+.status.check{background:var(--charcoal)}
+.status.unconfirmed{background:var(--maroon)}
+.flow{display:flex;align-items:center;gap:.45rem;flex-wrap:wrap;margin:.5rem 0 0;font-size:.9rem}
+.flow span{background:var(--surface);border-radius:8px;padding:.3rem .55rem}
+.flow span.now{background:var(--maroon-tint);color:var(--maroon);font-weight:800}
+.flow i{font-style:normal;color:var(--stone)}
+.check h3{margin:0 0 .4rem;font-size:1rem;color:var(--navy)}
+.check label{display:flex;gap:.55rem;align-items:flex-start;margin:.45rem 0;cursor:pointer}
+.check input{width:1.15rem;height:1.15rem;margin-top:.2rem;accent-color:var(--maroon)}
+.check .doc{margin-top:.6rem}
+.check .doc input{width:100%;font:inherit;padding:.45rem .6rem;border:1px solid var(--hairline);border-radius:8px;background:#fff}
+.result{margin-top:.7rem;padding:.6rem .8rem;border-radius:10px;background:var(--petrol-tint);color:var(--navy);font-weight:700;min-height:2.6rem}
+.git{margin:.9rem 0 0;display:flex;gap:.5rem;align-items:center;font-size:.92rem}
+.git input{accent-color:var(--maroon);width:1.1rem;height:1.1rem}
+.git[hidden]{display:none}
+.saw{background:var(--surface);border-radius:12px;padding:.9rem 1.1rem;margin-top:1.4rem}
+.saw h2{margin:0 0 .3rem;font-size:.8rem;letter-spacing:.12em;color:var(--maroon)}
+.hint{font-size:.85rem;color:var(--stone);margin-top:.6rem}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <a href="../">Back to Session 1 notes</a>
+  <h1>Session 1, demonstration 1: <span>where a grade sits, and which syllabus it uses</span></h1>
+</header>
+<main>
+  <p class="what"><strong>What this shows:</strong> pick a grade you teach. You see where it sits in the national pathway, what comes before and after it, and the syllabus version the programme records for it. Then you run the three-question version check for your own class.</p>
+
+  <div class="band" aria-hidden="true"><span>FOUNDATION</span><span>G.C.E. O/L</span><span>G.C.E. A/L</span></div>
+  <div class="road" role="group" aria-label="Choose a grade">
+    <button class="g" type="button" data-g="6" aria-pressed="false">6<small>GRADE</small></button>
+    <button class="g" type="button" data-g="7" aria-pressed="false">7<small>GRADE</small></button>
+    <button class="g" type="button" data-g="8" aria-pressed="false">8<small>GRADE</small></button>
+    <button class="g" type="button" data-g="9" aria-pressed="false">9<small>GRADE</small></button>
+    <button class="g" type="button" data-g="10" aria-pressed="false">10<small>GRADE</small></button>
+    <button class="g" type="button" data-g="11" aria-pressed="false">11<small>GRADE</small></button>
+    <button class="g" type="button" data-g="12" aria-pressed="false">12<small>GRADE</small></button>
+    <button class="g" type="button" data-g="13" aria-pressed="false">13<small>GRADE</small></button>
+  </div>
+  <p class="floor">There is no formal ICT syllabus below Grade 6, so the pathway, and the NCIT-E band, start at Grade 6.</p>
+
+  <section class="panel" aria-live="polite">
+    <div>
+      <h2 id="title">Choose a grade above</h2>
+      <p class="kv" id="stage"></p>
+      <p class="kv" id="covers"></p>
+      <p class="kv"><b>Syllabus version: </b><span id="status"></span></p>
+      <p class="kv" id="version"></p>
+      <div class="flow" id="flow"></div>
+      <label class="git" id="gitrow" hidden><input type="checkbox" id="git"> I teach GIT (General Information Technology), not A/L ICT</label>
+    </div>
+    <div class="check">
+      <h3>The version check, for your class</h3>
+      <label><input type="checkbox" class="q"> I know which syllabus document, with its year, I teach from</label>
+      <label><input type="checkbox" class="q"> I have confirmed it is the version in force for this grade this year, with my school, zonal office or NIE</label>
+      <label><input type="checkbox" class="q"> My textbook and the past papers I use match that version</label>
+      <div class="doc"><label for="docname" style="display:block;margin:0 0 .25rem">Document and year</label>
+        <input id="docname" type="text" placeholder="For example: NIE Grade 8 ICT teacher's guide, 2018"></div>
+      <p class="result" id="result">Tick the three checks and name the document.</p>
+    </div>
+  </section>
+  <p class="hint">Keyboard: Tab to a grade and press Enter. Nothing you type leaves this page.</p>
+
+  <section class="saw">
+    <h2>WHAT YOU JUST SAW</h2>
+    <p>The pathway is one subject over eight grades in three stages, so every topic you teach has a before and an after. The bands are not on the same footing during the reform transition: Grades 6 to 9 and A/L have a recorded version, while the O/L version is unconfirmed. That is why the programme never says "the current syllabus" without naming the document and its year, and why the version check comes before any lesson plan.</p>
+  </section>
+</main>
+<script>
+(function () {
+  "use strict";
+  var V = {
+    found: { cls: "stable", label: "Stable", text: "NIE Grade 6 to 9 ICT material, published from 2018 (Grade 6). The most stable band at present." },
+    g10: { cls: "unconfirmed", label: "Unconfirmed", text: "Grade 10 ICT has been reported as revised in 2026, while the reform roadmap indicates Grade 10 implementation in 2028. The two reports have not been reconciled, so the programme treats the version as unconfirmed until NIE confirms which applies." },
+    g11: { cls: "check", label: "Check before planning", text: "A Grade 11 revision is planned for 2027. Confirm which version your Grade 11 class is taught and examined on." },
+    al: { cls: "stable", label: "Recorded", text: "The 2017 syllabus is the current published NIE syllabus for A/L." },
+    git: { cls: "check", label: "Check its own syllabus", text: "GIT has its own syllabus, separate from A/L ICT. The programme does not record its version: check the GIT syllabus document and its year." }
+  };
+  var G = {
+    6: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
+    7: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
+    8: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
+    9: ["Foundation (Grades 6 to 9)", "Curriculum subject; not a G.C.E. subject", "found"],
+    10: ["G.C.E. O/L (Grades 10 and 11)", "Formal G.C.E. O/L subject", "g10"],
+    11: ["G.C.E. O/L (Grades 10 and 11)", "Formal G.C.E. O/L subject", "g11"],
+    12: ["G.C.E. A/L (Grades 12 and 13)", "Advanced subject with a G.C.E. A/L examination", "al"],
+    13: ["G.C.E. A/L (Grades 12 and 13)", "Advanced subject with a G.C.E. A/L examination", "al"]
+  };
+  var COVERS = {
+    found: "Practical use, computing concepts, programming exposure, Internet and web skills.",
+    ol: "Computer systems, data representation, logic, operating systems, productivity tools, databases, programming.",
+    al: "Architecture, data representation, digital logic, operating systems, networking, systems analysis and design, databases, programming, web, IoT, project work.",
+    git: "General Information Technology, introduced at Grade 12 in 2002 with national examinations from 2005, for A/L students not taking ICT."
+  };
+  var grade = null;
+  var $ = function (id) { return document.getElementById(id); };
+  function stageKey(g) { return g <= 9 ? "found" : g <= 11 ? "ol" : "al"; }
+  function render() {
+    if (grade === null) { return; }
+    var info = G[grade], gitOn = grade >= 12 && $("git").checked;
+    var v = gitOn ? V.git : V[info[2]];
+    $("title").textContent = "Grade " + grade + (gitOn ? ", GIT" : "");
+    $("stage").innerHTML = "<b>Stage: </b>" + (gitOn ? "G.C.E. A/L, GIT" : info[0]) + ". " + info[1] + ".";
+    $("covers").innerHTML = "<b>Covers: </b>" + (gitOn ? COVERS.git : COVERS[stageKey(grade)]);
+    $("status").innerHTML = '<span class="status ' + v.cls + '">' + v.label + "</span>";
+    $("version").textContent = v.text;
+    var before = grade === 6 ? "No ICT syllabus below Grade 6" : "Grade " + (grade - 1);
+    var after = grade === 13 ? "Higher study or work" : "Grade " + (grade + 1);
+    $("flow").innerHTML = "<span>" + before + "</span><i>then</i><span class=\"now\">Grade " + grade + "</span><i>then</i><span>" + after + "</span>";
+    $("gitrow").hidden = grade < 12;
+    document.querySelectorAll(".g").forEach(function (b) { b.setAttribute("aria-pressed", String(+b.dataset.g === grade)); });
+    check();
+  }
+  function check() {
+    var ticks = document.querySelectorAll(".q:checked").length, doc = $("docname").value.trim();
+    var r = $("result");
+    if (ticks < 3 || !doc) {
+      r.textContent = "Tick the three checks and name the document. " + ticks + " of 3 checks done.";
+      r.style.background = "#F5F3F5"; return;
+    }
+    if (!/\b(19|20)\d\d\b/.test(doc)) {
+      r.textContent = "Add the year to the document name. A reference without a year is exactly the gap the version check closes.";
+      r.style.background = "#F6E4EB"; return;
+    }
+    var g = grade === null ? "your class" : "Grade " + grade;
+    r.textContent = "Version recorded: " + g + " is taught from " + doc + ". Write this line on your lesson plan.";
+    r.style.background = "#E6EEF3";
+  }
+  document.querySelectorAll(".g").forEach(function (b) { b.addEventListener("click", function () { grade = +b.dataset.g; render(); }); });
+  $("git").addEventListener("change", render);
+  document.querySelectorAll(".q").forEach(function (q) { q.addEventListener("change", check); });
+  $("docname").addEventListener("input", check);
+  check();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,176 @@
+<!doctype html>
+<!-- NCIT-E demo. Code: MIT licence. Content: CC BY-NC-SA 4.0, NIBM School of Computing & Engineering.
+     One file, no external scripts, works offline. Strand descriptors from NCIT KT Kit v3.4, 02 section 2;
+     strand hours by unit from 03 section 3.3. Ratings stay on this device only. -->
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 1, demo 2: Your baseline practice profile | NCIT-E</title>
+<style>
+@font-face{font-family:"Open Sans";font-weight:400;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-weight:700;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-weight:800;font-display:swap;src:url("../../../assets/fonts/open-sans-latin-800-normal.woff2") format("woff2")}
+:root{--canvas:#FFFDEE;--maroon:#8C013C;--petrol:#0A466B;--navy:#112A50;--charcoal:#545454;--ink:#263232;--stone:#5E5E56;
+--surface:#F5F3F5;--hairline:#E3DFCC;--card:#FFFEF8;--maroon-tint:#F6E4EB;--petrol-tint:#E6EEF3;--font:"Open Sans","Segoe UI",Roboto,Calibri,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--canvas);line-height:1.5}
+header{border-bottom:1px solid var(--hairline);padding:1rem 1.1rem}
+header a{display:inline-block;background:var(--charcoal);color:#fff;border-radius:6px;padding:.2rem .6rem;font-size:.82rem;font-weight:700;text-decoration:none}
+header h1{margin:.5rem 0 0;font-size:1.35rem;line-height:1.25;color:var(--petrol)}
+header h1 span{color:var(--maroon)}
+main{max-width:64rem;margin:0 auto;padding:1rem 1.1rem 2.5rem}
+.layout{display:grid;gap:1.2rem}
+@media (min-width:56rem){.layout{grid-template-columns:1.35fr 1fr;align-items:start}}
+.scale{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .9rem;font-size:.85rem}
+.scale span{background:var(--surface);border-radius:8px;padding:.25rem .55rem}
+.scale b{color:var(--maroon)}
+fieldset{border:1px solid var(--hairline);border-radius:12px;background:var(--card);margin:0 0 .7rem;padding:.7rem .9rem}
+legend{font-weight:800;color:var(--navy);padding:0 .3rem}
+.desc{margin:0 0 .45rem;font-size:.88rem;color:var(--stone)}
+.rates{display:flex;gap:.4rem;margin:0 0 .5rem}
+.rates input{position:absolute;opacity:0;width:1px;height:1px}
+.rates label{width:2.4rem;height:2.4rem;display:grid;place-items:center;border-radius:9999px;border:2px solid var(--hairline);background:#fff;font-weight:800;color:var(--navy);cursor:pointer;transition:background .15s,border-color .15s}
+.rates input:checked+label{background:var(--maroon);border-color:var(--maroon);color:#fff}
+.rates input:focus-visible+label{outline:3px solid var(--navy);outline-offset:2px}
+textarea{width:100%;font:inherit;font-size:.92rem;min-height:2.6rem;padding:.4rem .55rem;border:1px solid var(--hairline);border-radius:8px;background:#fff;resize:vertical}
+.warn{margin:.3rem 0 0;font-size:.82rem;color:var(--maroon);font-weight:700}
+.side{position:sticky;top:1rem}
+.chart{background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:.6rem}
+.chart svg{display:block;width:100%;height:auto}
+.pri{background:var(--card);border:1px solid var(--hairline);border-radius:14px;padding:.8rem 1rem;margin-top:.8rem}
+.pri h2{margin:0 0 .4rem;font-size:1rem;color:var(--navy)}
+.pri select{font:inherit;width:100%;padding:.4rem .5rem;border:1px solid var(--hairline);border-radius:8px;background:#fff;margin:.2rem 0 .3rem}
+.pri p{margin:.1rem 0 .7rem;font-size:.86rem;color:var(--stone)}
+.btns{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.8rem}
+button{font:inherit;font-weight:700;border-radius:8px;padding:.5rem .9rem;cursor:pointer;border:1px solid var(--maroon);background:#fff;color:var(--maroon)}
+button.primary{background:var(--maroon);color:#fff}
+button:focus-visible{outline:3px solid var(--navy);outline-offset:2px}
+.note{font-size:.84rem;color:var(--stone);margin-top:.5rem}
+.saw{background:var(--surface);border-radius:12px;padding:.9rem 1.1rem;margin-top:1.4rem}
+.saw h2{margin:0 0 .3rem;font-size:.8rem;letter-spacing:.12em;color:var(--maroon)}
+@media print{header a,.btns,.note,.saw,.scale{display:none}.side{position:static}body{background:#fff}fieldset,.chart,.pri{break-inside:avoid}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <a href="../">Back to Session 1 notes</a>
+  <h1>Session 1, demonstration 2: <span>your baseline practice profile</span></h1>
+</header>
+<main>
+  <p><strong>What this shows:</strong> rate your current practice on the six strands, give one piece of evidence for each rating, and watch your profile take shape. Then choose two development priorities; the tool shows which units address each strand. It is not graded. Nothing leaves this device.</p>
+  <div class="scale" aria-label="Rating scale"><span><b>1</b> New to me</span><span><b>2</b> I do this sometimes, or with support</span><span><b>3</b> I do this routinely in my own teaching</span><span><b>4</b> I could help a colleague do this</span></div>
+  <div class="layout">
+    <form id="form" onsubmit="return false"></form>
+    <aside class="side">
+      <div class="chart" aria-hidden="true"><svg id="radar" viewBox="0 0 470 350"></svg></div>
+      <p class="note" id="summary" aria-live="polite"></p>
+      <div class="pri">
+        <h2>Two development priorities</h2>
+        <label for="p1">Priority 1</label><select id="p1"></select><p id="p1u"></p>
+        <label for="p2">Priority 2</label><select id="p2"></select><p id="p2u"></p>
+      </div>
+      <div class="btns">
+        <button type="button" class="primary" id="save">Save on this device</button>
+        <button type="button" id="print">Print or save as PDF</button>
+        <button type="button" id="clear">Clear</button>
+      </div>
+      <p class="note" id="saved"></p>
+    </aside>
+  </div>
+  <section class="saw">
+    <h2>WHAT YOU JUST SAW</h2>
+    <p>A profile is only as good as its evidence. A rating with something you did behind it is a fact you can build on; a rating without one is a guess, which is why the tool flags ratings of 3 or 4 with no evidence. The shape shows where your second competence is still forming, and the unit list shows where in the programme that work happens. Keep the profile: you will compare it with your practice at the end of the programme.</p>
+  </section>
+</main>
+<script>
+(function () {
+  "use strict";
+  var S = [
+    { id: "S1", short: "Policy", name: "Policy & Context", desc: "Knows the national ICT curriculum landscape", units: "M1 Orientation & the ICT Teacher's Role" },
+    { id: "S2", short: "Curriculum", name: "Curriculum & Assessment", desc: "Reads a syllabus, writes objectives", units: "M9 Lesson Design, Assessment & the ICT Learning Environment" },
+    { id: "S3", short: "Pedagogy", name: "Pedagogy & Learning Design", desc: "Plans an ICT-supported lesson", units: "M2 How People Learn Computing, then every content unit: hardware, software, networks, data, programming, and digital safety (M3 to M8)" },
+    { id: "S4", short: "Digital skills", name: "Digital Skills & Tools", desc: "Operates the core stack", units: "The content units on hardware, software, networks, data, programming and digital safety (M3 to M8), including the Sinhala and Tamil content creation lab" },
+    { id: "S5", short: "Safeguarding", name: "Organisation & Safeguarding", desc: "Applies safe practice", units: "M8 Digital Safety, Ethics & AI Literacy, and the learning environment in M9" },
+    { id: "S6", short: "Professional learning", name: "Professional Learning", desc: "Reflects; joins a network", units: "M1 Orientation, and the reflection in M9" }
+  ];
+  var KEY = "ncite:s01-profile";
+  var form = document.getElementById("form");
+  S.forEach(function (s, i) {
+    var fs = document.createElement("fieldset");
+    var h = '<legend>' + s.id + " " + s.name.replace("&", "&amp;") + '</legend><p class="desc">At Essentials, a teacher ' + s.desc.charAt(0).toLowerCase() + s.desc.slice(1) + '.</p><div class="rates">';
+    for (var r = 1; r <= 4; r++) {
+      h += '<input type="radio" name="r' + i + '" id="r' + i + "-" + r + '" value="' + r + '"><label for="r' + i + "-" + r + '" title="Rating ' + r + '">' + r + "</label>";
+    }
+    h += '</div><label class="desc" for="e' + i + '">Evidence: what I did, when, with whom</label><textarea id="e' + i + '" rows="2"></textarea><p class="warn" id="w' + i + '" hidden>A rating of 3 or 4 needs evidence behind it.</p>';
+    fs.innerHTML = h;
+    form.appendChild(fs);
+  });
+  ["p1", "p2"].forEach(function (id) {
+    var sel = document.getElementById(id);
+    sel.innerHTML = '<option value="">Choose a strand</option>' + S.map(function (s, i) { return '<option value="' + i + '">' + s.id + " " + s.name.replace("&", "&amp;") + "</option>"; }).join("");
+    sel.addEventListener("change", update);
+  });
+  function ratings() { return S.map(function (s, i) { var c = form.querySelector('input[name="r' + i + '"]:checked'); return c ? +c.value : 0; }); }
+  function pt(i, v, R) { var a = -Math.PI / 2 + i * 2 * Math.PI / 6; return [235 + R * v / 4 * Math.cos(a), 172 + R * v / 4 * Math.sin(a)]; }
+  function draw(rs) {
+    var R = 112, svg = "";
+    for (var lv = 1; lv <= 4; lv++) {
+      svg += '<polygon points="' + S.map(function (s, i) { return pt(i, lv, R).join(","); }).join(" ") + '" fill="' + (lv === 4 ? "#F5F3F5" : "none") + '" stroke="#E3DFCC" stroke-width="1.2"/>';
+    }
+    S.forEach(function (s, i) {
+      var e = pt(i, 4, R), l = pt(i, 4.55, R);
+      svg += '<line x1="235" y1="172" x2="' + e[0] + '" y2="' + e[1] + '" stroke="#E3DFCC"/>';
+      var anc = Math.abs(l[0] - 235) < 8 ? "middle" : (l[0] > 235 ? "start" : "end");
+      var words = s.short.length > 12 ? s.short.split(" ") : [s.short];
+      svg += '<text x="' + l[0] + '" y="' + (l[1] + 4 - (words.length - 1) * 7 + (l[1] > 250 ? 10 : 0)) + '" text-anchor="' + anc + '" font-family="Open Sans, sans-serif" font-size="12.5" font-weight="800" fill="#112A50">' +
+        words.map(function (w, k) { return '<tspan x="' + l[0] + '" dy="' + (k ? 14 : 0) + '">' + w + "</tspan>"; }).join("") + "</text>";
+    });
+    if (rs.some(function (v) { return v > 0; })) {
+      svg += '<polygon points="' + rs.map(function (v, i) { return pt(i, v, R).join(","); }).join(" ") + '" fill="#8C013C" fill-opacity=".22" stroke="#8C013C" stroke-width="2.5" stroke-linejoin="round"/>';
+      rs.forEach(function (v, i) { if (v) { var p = pt(i, v, R); svg += '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="5" fill="#8C013C"/>'; } });
+    }
+    svg += '<text x="235" y="344" text-anchor="middle" font-family="Open Sans, sans-serif" font-size="11" fill="#5E5E56">Rings: ratings 1 to 4</text>';
+    document.getElementById("radar").innerHTML = svg;
+  }
+  function update() {
+    var rs = ratings(), done = rs.filter(Boolean).length, missing = 0;
+    S.forEach(function (s, i) {
+      var ev = document.getElementById("e" + i).value.trim();
+      var need = rs[i] >= 3 && !ev;
+      document.getElementById("w" + i).hidden = !need;
+      if (rs[i] && !ev) { missing++; }
+    });
+    draw(rs);
+    document.getElementById("summary").textContent = done + " of 6 strands rated" + (missing ? "; " + missing + " without evidence yet." : ".");
+    ["p1", "p2"].forEach(function (id) {
+      var v = document.getElementById(id).value;
+      document.getElementById(id + "u").textContent = v === "" ? "" : "Addressed in: " + S[+v].units + ".";
+    });
+  }
+  form.addEventListener("input", update);
+  form.addEventListener("change", update);
+  function store(fn) { try { return fn(window.localStorage); } catch (e) { return null; } }
+  document.getElementById("save").addEventListener("click", function () {
+    var data = { r: ratings(), e: S.map(function (s, i) { return document.getElementById("e" + i).value; }), p1: document.getElementById("p1").value, p2: document.getElementById("p2").value };
+    var ok = store(function (ls) { ls.setItem(KEY, JSON.stringify(data)); return true; });
+    document.getElementById("saved").textContent = ok ? "Saved on this device only." : "This browser does not allow saving. Print or save as PDF instead.";
+  });
+  document.getElementById("print").addEventListener("click", function () { window.print(); });
+  document.getElementById("clear").addEventListener("click", function () {
+    form.reset(); document.getElementById("p1").value = ""; document.getElementById("p2").value = "";
+    store(function (ls) { ls.removeItem(KEY); }); document.getElementById("saved").textContent = "Cleared."; update();
+  });
+  var saved = store(function (ls) { return JSON.parse(ls.getItem(KEY) || "null"); });
+  if (saved) {
+    saved.r.forEach(function (v, i) { if (v) { document.getElementById("r" + i + "-" + v).checked = true; } });
+    saved.e.forEach(function (v, i) { document.getElementById("e" + i).value = v; });
+    document.getElementById("p1").value = saved.p1; document.getElementById("p2").value = saved.p2;
+    document.getElementById("saved").textContent = "Your saved profile has been loaded.";
+  }
+  update();
+})();
+</script>
+</body>
+</html>
