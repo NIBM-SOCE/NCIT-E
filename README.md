@@ -92,3 +92,10 @@ See [assessment/](assessment/).
 |---|---|
 | `units/M1/` to `units/M9/` | One folder per unit: sessions, hours, and released materials |
 | `assessment/` | Assessment overview; briefs and rubrics once issued |
+
+## Licence
+
+Content © 2026 National Institute of Business Management (NIBM), School of Computing &
+Engineering (SOCE), licensed under CC BY-NC-SA 4.0; see [LICENSE-CONTENT.md](LICENSE-CONTENT.md).
+Code is licensed under MIT; see [LICENSE](LICENSE). The NIBM and NCIT names and the certified
+badge are not licensed, and using this material does not confer an NCIT credential.
