@@ -16,7 +16,7 @@ sessions:
   - { n: 1, code: "S01", unit: "M1", week: 1, type: "Contact", title: "Orientation and the ICT teacher's role", ilos: [6], feeds: ["A1", "A2"], slides: "/sessions/s01/slides/ncit-e-s01-orientation.pptx", url: "/sessions/s01/" }
   - { n: 2, code: "S02", unit: "M2", week: 2, type: "Contact", title: "What is in the learner's head", ilos: [1, 3], feeds: [], slides: "/sessions/s02/slides/ncit-e-s02-learners-head.pptx", url: "/sessions/s02/" }
   - { n: 3, code: "S03", unit: "M2", week: 3, type: "Contact", title: "Teaching so the right model forms", ilos: [1, 2], feeds: [], slides: "/sessions/s03/slides/ncit-e-s03-right-model.pptx", url: "/sessions/s03/" }
-  - { n: 4, code: "S04", unit: "M2", week: 3, type: "Practical", title: "Accessibility and inclusive design (UDL) workshop", ilos: [1], feeds: [], slides: "/sessions/s04/slides/ncit-e-s04-udl-workshop.pptx", url: "/sessions/s04/" }
+  - { n: 4, code: "S04", unit: "M2", week: 3, type: "Practical", title: "Accessibility and inclusive design workshop (Universal Design for Learning)", ilos: [1], feeds: [], slides: "/sessions/s04/slides/ncit-e-s04-udl-workshop.pptx", url: "/sessions/s04/" }
   - { n: 5, code: "S05", unit: "M3", week: 4, type: "Contact", title: "Computer systems and hardware", ilos: [], feeds: [], url: "/sessions/s05/" }
   - { n: 6, code: "S06", unit: "M3", week: 4, type: "Practical", title: "Low-resource and device-scarce teaching practical", ilos: [], feeds: [], url: "/sessions/s06/" }
   - { n: 7, code: "S07", unit: "M4", week: 5, type: "Contact", title: "Software, operating systems and productivity tools", ilos: [], feeds: [], url: "/sessions/s07/" }

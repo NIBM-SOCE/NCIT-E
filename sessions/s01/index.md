@@ -167,7 +167,7 @@ There are **20 sessions of 3 hours**: 15 contact sessions, one a week for 15 tea
 
 | Practical session | Unit | Teaching week |
 |---|---|---|
-| Session 4: Accessibility and inclusive design (UDL) workshop | M2 | 3 |
+| Session 4: Accessibility and inclusive design workshop (Universal Design for Learning) | M2 | 3 |
 | Session 6: Low-resource and device-scarce teaching practical | M3 | 4 |
 | Sessions 8 and 9: Sinhala and Tamil digital content creation lab | M4 | 5 and 6 |
 | Session 19: ICT learning environment observation | M9 | 14 |
@@ -176,7 +176,7 @@ There are **20 sessions of 3 hours**: 15 contact sessions, one a week for 15 tea
 
 Attend at least 16 of 20 sessions (80%). Practical sessions missed require a documented make-up.
 
-The second sentence is there because three of the practical sessions, the UDL workshop and the two lab sessions, teach content that appears nowhere else in the programme.
+The second sentence is there because three of the practical sessions, the accessibility workshop and the two lab sessions, teach content that appears nowhere else in the programme.
 
 ### How the units are written
 
