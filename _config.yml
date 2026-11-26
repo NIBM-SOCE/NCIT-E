@@ -1,2 +1,33 @@
+# NCIT-E candidate portal - GitHub Pages (Jekyll 3.10 on Pages).
+# Layout and look follow the NIBM SOCE courseware portals. Keep this file stable.
 title: "NIBM Certified ICT Teacher: Essentials"
-description: "Candidate materials for NCIT-E. National Institute of Business Management, School of Computing & Engineering."
+short_title: "NCIT-E"
+code: "NCIT-E"
+institution: "National Institute of Business Management"
+school: "School of Computing & Engineering"
+director: "Niranga Dharmaratna"
+director_role: "Programme Course Director"
+director_email: "niranga@nibm.lk"
+focus: "Teaching ICT well, from Grade 6 to A/L, in the classrooms you actually teach in."
+description: "Candidate portal for NCIT-E, the Essentials level of the NIBM Certified ICT Teacher programme: session notes, activities and independent study for each unit."
+url: "https://ncit-e.teach.lk"
+baseurl: ""
+lang: en-GB
+markdown: kramdown
+kramdown:
+  input: GFM
+  auto_ids: true
+  hard_wrap: false
+  # House rules: no em or en dashes, three dots never the ellipsis character.
+  typographic_symbols: { hellip: "...", mdash: "---", ndash: "--" }
+highlighter: rouge
+plugins: []
+exclude:
+  - README.md
+  - CLAUDE.md
+  - LICENSE-CONTENT.md
+  - units
+  - private
+defaults:
+  - scope: { path: "sessions" }
+    values: { layout: session }

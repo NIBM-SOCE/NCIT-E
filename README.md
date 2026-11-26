@@ -88,10 +88,17 @@ See [assessment/](assessment/).
 
 ## Repository layout
 
+Published as the candidate portal at https://ncit-e.teach.lk (GitHub Pages, Jekyll).
+
 | Path | Holds |
 |---|---|
-| `units/M1/` to `units/M9/` | One folder per unit: sessions, hours, and released materials |
+| `index.html` | Portal home page: units and sessions in the fixed delivery order |
+| `sessions/sNN/` | One folder per session: notes, activities and independent study, once released |
+| `_data/programme.yml` | Units, sessions and learning outcomes: the single source for the home page and navigation |
+| `_data/glossary/sNN.yml` | Words first taught in each session |
 | `assessment/` | Assessment overview; briefs and rubrics once issued |
+| `units/M1/` to `units/M9/` | Unit summaries (repository only, not part of the portal) |
+| `_layouts/`, `_includes/`, `assets/` | Portal look and feel |
 
 ## Licence
 

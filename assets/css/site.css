@@ -1,0 +1,226 @@
+/* NCIT-E candidate portal
+   Palette: deep navy, royal blue and sunrise gold. Gold is decorative or used on dark
+   backgrounds only; small text on light backgrounds uses --gold-dark or --blue-dark.
+   Typeface: Open Sans, self-hosted (SIL OFL 1.1, see assets/fonts/OFL.txt). */
+
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:400;font-display:swap;src:url("../fonts/open-sans-latin-400-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:italic;font-weight:400;font-display:swap;src:url("../fonts/open-sans-latin-400-italic.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:600;font-display:swap;src:url("../fonts/open-sans-latin-600-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:italic;font-weight:600;font-display:swap;src:url("../fonts/open-sans-latin-600-italic.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:700;font-display:swap;src:url("../fonts/open-sans-latin-700-normal.woff2") format("woff2")}
+@font-face{font-family:"Open Sans";font-style:normal;font-weight:800;font-display:swap;src:url("../fonts/open-sans-latin-800-normal.woff2") format("woff2")}
+
+:root{
+  --bg:#F6F8FD; --surface:#E7EDFA; --card:#FFFFFF; --ink:#1B2559;
+  --blue:#3451B2; --blue-dark:#263F94; --blue-surface:#DCE5F8; --sky:#9DB4F0;
+  --gold:#F2B705; --gold-dark:#7A5600; --gold-tint:#FFF5D6; --gold-light:#FFD866;
+  --stone:#55607A; --hairline:#CFD8EC;
+  --ilo1:#1B2559; --ilo2:#2C46A8; --ilo3:#1F6280; --ilo4:#5B3FA0; --ilo5:#7A5600; --ilo6:#3B4A6B;
+  --font:"Open Sans","Segoe UI",Roboto,Calibri,"Helvetica Neue",sans-serif;
+  --mono:Consolas,"Cascadia Mono",Menlo,"DejaVu Sans Mono",monospace;
+  --radius:14px; --measure:46rem;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:1rem}
+body{margin:0;font-family:var(--font);font-size:1.0625rem;line-height:1.65;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%}
+img,svg{max-width:100%;height:auto}
+a{color:var(--blue-dark);font-weight:600;text-underline-offset:.18em}
+a:hover{color:var(--gold-dark)}
+:focus-visible{outline:3px solid var(--blue-dark);outline-offset:2px;border-radius:4px}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:#fff;padding:.5rem 1rem;z-index:10}
+.skip:focus{left:1rem}
+.wrap{max-width:var(--measure);margin:0 auto;padding:0 1.1rem}
+.wrap-wide{max-width:72rem;margin:0 auto;padding:0 1.1rem}
+
+/* Header band with the module's signature bars (sage long, plum short) */
+.site-header{background:radial-gradient(circle at 92% -10%,rgba(255,216,102,.38),transparent 38%),linear-gradient(160deg,#1B2559 0%,#24358A 62%,#3451B2 100%);color:#fff;padding:1.6rem 0 1.4rem}
+.site-header .eyebrow{margin:0;color:var(--surface);font-size:.85rem;font-weight:600;letter-spacing:.04em}
+.site-header .eyebrow a{color:var(--surface);font-weight:600;text-decoration:none}
+.site-header .eyebrow a:hover{text-decoration:underline;color:#fff}
+.site-header h1{margin:.35rem 0 0;font-size:clamp(1.45rem,4vw,2rem);line-height:1.2;font-weight:800}
+.site-header p.sub{margin:.4rem 0 0;color:var(--surface);font-size:.95rem}
+.site-header p.sub.focus{color:#fff;max-width:40rem}
+/* Home header: text column and QR code. The module title stays on one line on wider screens:
+   it scales with the text column (container units) instead of wrapping. On phones it may wrap,
+   and the QR is hidden, because a phone showing this page has no use for a code to open it. */
+.home-head{display:flex;align-items:center;gap:1.5rem}
+.home-head-text{flex:1 1 auto;min-width:0;container-type:inline-size}
+.qr{flex:none;margin:0;text-align:center}
+.qr img{display:block;width:128px;height:128px;background:#fff;border-radius:10px;padding:6px}
+.qr figcaption{margin-top:.35rem;font-size:.78rem;font-weight:600;color:var(--surface);letter-spacing:.03em}
+@media (min-width:48rem){.site-header h1.one-line{white-space:nowrap;font-size:min(2rem,3.3cqi)}}
+@media (max-width:47.99rem){.qr{display:none}}
+.bars{display:flex;gap:6px;margin-top:.9rem}
+.bars i{display:block;height:6px;border-radius:2px}
+.bars i:first-child{width:56px;background:var(--gold)}
+.bars i:last-child{width:26px;background:var(--sky)}
+
+main{padding:1.6rem 0 3rem}
+.card{background:var(--card);border:1px solid var(--hairline);border-radius:var(--radius);padding:1.25rem 1.4rem;margin:0 0 1rem}
+
+/* Prose */
+.prose h2{font-size:1.45rem;line-height:1.3;margin:2.4rem 0 .6rem;padding-bottom:.35rem;border-bottom:1px solid var(--hairline)}
+.prose h3{font-size:1.15rem;margin:1.6rem 0 .4rem}
+.prose h4{font-size:1rem;margin:1.2rem 0 .3rem;color:var(--blue-dark)}
+.prose p,.prose li{max-width:var(--measure)}
+.prose ul,.prose ol{padding-left:1.3rem}
+.prose li{margin:.25rem 0}
+.prose blockquote{margin:1rem 0;padding:.7rem 1rem;background:var(--surface);border-left:4px solid var(--blue);border-radius:0 10px 10px 0}
+.prose hr{border:0;border-top:1px solid var(--hairline);margin:2rem 0}
+.table-scroll,.prose table{display:block;overflow-x:auto}
+.prose table{border-collapse:collapse;margin:1rem 0;font-size:.95rem;width:max-content;max-width:100%}
+.prose th{background:var(--ink);color:#fff;text-align:left;font-weight:700}
+.prose th,.prose td{padding:.5rem .7rem;border:1px solid var(--hairline);vertical-align:top}
+.prose tr:nth-child(even) td{background:#EEF2FB}
+code{font-family:var(--mono);font-size:.92em;background:var(--surface);padding:.08em .32em;border-radius:5px}
+pre{font-family:var(--mono);font-size:.88rem;line-height:1.5;background:#EEF2FB;border:1px solid var(--hairline);border-radius:10px;padding:.9rem 1rem;overflow-x:auto}
+pre code{background:none;padding:0}
+
+/* Session meta */
+.meta{display:flex;flex-wrap:wrap;gap:.45rem .8rem;align-items:center;margin:.2rem 0 1.2rem;color:var(--stone);font-size:.92rem}
+.badge{display:inline-block;color:#fff;font-weight:700;font-size:.8rem;line-height:1;padding:.38rem .55rem;border-radius:6px;letter-spacing:.02em}
+.badge.ilo1{background:var(--ilo1)}.badge.ilo2{background:var(--ilo2)}.badge.ilo3{background:var(--ilo3)}.badge.ilo4{background:var(--ilo4)}.badge.ilo5{background:var(--ilo5)}.badge.ilo6{background:var(--ilo6)}
+.feeds{font-weight:600;color:var(--stone)}
+.tag{display:inline-block;font-size:.78rem;font-weight:700;color:var(--gold-dark);background:var(--gold-tint);border-radius:999px;padding:.2rem .6rem}
+
+/* Box family. Label text is generated so every box reads the same way. */
+.box{border-radius:0 12px 12px 0;padding:.9rem 1.1rem .9rem 1.2rem;margin:1.3rem 0;border-left:5px solid}
+.box>*:first-child{margin-top:0}.box>*:last-child{margin-bottom:0}
+.box::before{display:block;font-size:.78rem;font-weight:800;letter-spacing:.12em;margin-bottom:.35rem}
+.metaphor{background:var(--surface);border-color:var(--blue)}
+.metaphor::before{content:"COMPARISON";color:var(--blue-dark)}
+.lens{background:var(--gold-tint);border-color:var(--gold)}
+.lens::before{content:"THROUGH ANOTHER LENS";color:var(--gold-dark)}
+.key{background:var(--card);border:1px solid var(--hairline);border-left:5px solid var(--ink)}
+.key::before{content:"KEY IDEA";color:var(--ink)}
+.mixups{background:var(--card);border:1px solid var(--hairline);border-left:5px solid var(--blue-dark)}
+.mixups::before{content:"COMMON MIX-UPS";color:var(--blue-dark)}
+.safety{background:var(--gold-tint);border-color:var(--gold-dark)}
+.safety::before{content:"SAFETY RULE";color:var(--gold-dark)}
+.expect{background:#EEF2FB;border-color:var(--blue-dark)}
+.expect::before{content:"YOU SHOULD SEE";color:var(--blue-dark)}
+.trouble{background:var(--card);border:1px dashed var(--hairline);border-left:5px solid var(--stone)}
+.trouble::before{content:"IF SOMETHING IS DIFFERENT";color:var(--stone)}
+.breaks{background:var(--gold-tint);border-color:var(--gold)}
+.breaks::before{content:"WHERE IT BREAKS";color:var(--gold-dark)}
+.task{background:var(--card);border:1px solid var(--hairline);border-left:5px solid var(--blue)}
+.task::before{content:"TRY THIS";color:var(--blue-dark)}
+.tutor{background:var(--card);border:1px solid var(--hairline);border-left:5px solid var(--gold)}
+.tutor::before{content:"FROM YOUR TUTOR";color:var(--gold-dark)}
+
+/* Layer 3: going deeper */
+details{margin:1rem 0}
+details.deeper{background:var(--card);border:1px solid var(--hairline);border-radius:12px;padding:.2rem 1rem}
+details.deeper>summary{cursor:pointer;font-weight:700;color:var(--blue-dark);padding:.6rem 0;list-style-position:outside}
+details.deeper>summary::before{content:"GOING DEEPER  ";font-size:.75rem;letter-spacing:.12em;color:var(--gold-dark)}
+details.deeper[open]>summary{border-bottom:1px solid var(--hairline);margin-bottom:.6rem}
+details.answer{background:#EEF2FB;border-radius:10px;padding:.15rem .9rem;margin:.4rem 0 1.2rem}
+details.answer>summary{cursor:pointer;font-weight:700;color:var(--blue-dark);padding:.45rem 0}
+
+/* Words to know (glossary term). Works with hover, keyboard focus and tap, no script needed. */
+.term{position:relative;border-bottom:2px dotted var(--blue);cursor:help;outline-offset:1px}
+.term .term-def{display:none;position:absolute;left:0;top:calc(100% + 6px);z-index:5;width:min(20rem,80vw);background:var(--ink);color:#fff;font-size:.88rem;font-weight:400;line-height:1.45;padding:.6rem .75rem;border-radius:8px;box-shadow:0 6px 18px rgba(27,37,89,.25)}
+.term:hover .term-def,.term:focus .term-def,.term:focus-within .term-def{display:block}
+/* Phones: a word-anchored box cannot fit, so the meaning opens as a bottom sheet */
+@media (max-width:40rem){.term .term-def{position:fixed;left:.75rem;right:.75rem;bottom:.75rem;top:auto;width:auto;font-size:.95rem;padding:.8rem 1rem}}
+.term .term-def b{color:var(--gold-light)}
+.term.missing{border-bottom-color:#B00020}
+
+/* Quick check (tap-to-answer). Without script the answer shows underneath. */
+.qc{background:var(--card);border:1px solid var(--hairline);border-radius:12px;padding:.9rem 1.1rem;margin:1.3rem 0}
+.qc::before{content:"QUICK CHECK";display:block;font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--gold-dark);margin-bottom:.3rem}
+.qc-q{font-weight:700;margin:.1rem 0 .6rem}
+.qc-opts,.prose .qc-opts{list-style:none;padding:0;margin:0;display:grid;gap:.45rem}
+.qc-opts li{margin:0}
+.qc-opts button{width:100%;text-align:left;font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--hairline);border-radius:9px;padding:.55rem .8rem;cursor:pointer}
+.qc-opts button:hover{border-color:var(--blue)}
+.qc-opts button.right{background:var(--surface);border-color:var(--blue-dark);font-weight:700}
+.qc-opts button.wrong{background:var(--gold-tint);border-color:var(--gold)}
+.qc-feedback{font-weight:700;margin:.6rem 0 0}
+.qc-why{margin-top:.5rem;color:var(--ink)}
+.js .qc-why{display:none}.js .qc.answered .qc-why{display:block}
+.qc-retry{font:inherit;font-size:.9rem;margin-top:.5rem;background:none;border:0;color:var(--blue-dark);font-weight:700;cursor:pointer;padding:0;text-decoration:underline}
+.no-js-answer{font-weight:700;color:var(--blue-dark)}.js .no-js-answer{display:none}
+
+/* End-of-day quiz */
+.quiz{background:var(--card);border:1px solid var(--hairline);border-top:6px solid var(--gold);border-radius:var(--radius);padding:1rem 1.3rem;margin:2rem 0}
+.quiz>h2:first-child{margin-top:.4rem;border:0}
+.sa{border-top:1px solid var(--hairline);padding-top:.6rem;margin-top:.8rem}
+
+/* Demo cards */
+.demo-card{display:flex;gap:1rem;align-items:flex-start;background:var(--card);border:1px solid var(--hairline);border-left:5px solid var(--gold);border-radius:0 12px 12px 0;padding:.85rem 1.1rem;margin:1.3rem 0}
+.demo-card .demo-id{flex:none;font-weight:800;font-size:.8rem;letter-spacing:.06em;color:#fff;background:var(--gold-dark);border-radius:6px;padding:.35rem .5rem;margin-top:.15rem}
+.demo-card p{margin:.15rem 0}
+.demo-card .demo-title{font-weight:700}
+.demo-card .demo-teaches{color:var(--stone);font-size:.95rem}
+
+/* Lists of outcomes / prerequisites */
+.outcomes,.before{background:var(--card);border:1px solid var(--hairline);border-radius:var(--radius);padding:.9rem 1.3rem;margin:0 0 1rem}
+.outcomes h2,.before h2{font-size:1rem;margin:0 0 .3rem;border:0;padding:0;letter-spacing:.02em}
+.outcomes ol,.before ul{margin:.2rem 0;padding-left:1.25rem}
+
+/* Session end: resources, progress, navigation */
+.resources{margin-top:2.4rem}
+.progress-box{display:flex;flex-wrap:wrap;align-items:center;gap:.8rem;background:var(--surface);border-radius:var(--radius);padding:1rem 1.2rem;margin:2rem 0 1rem}
+.btn{font:inherit;font-weight:700;color:#fff;background:var(--blue-dark);border:0;border-radius:9px;padding:.6rem 1rem;cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{background:var(--ink);color:#fff}
+.btn.done{background:var(--gold-dark)}
+.progress-note{font-size:.88rem;color:var(--stone)}
+.pager{display:flex;justify-content:space-between;gap:1rem;margin-top:1.5rem;font-size:.95rem}
+.pager a{max-width:48%}
+
+/* Home page */
+.hero{display:block;margin:0 auto 1.2rem;max-width:52rem;width:100%}
+.intro{font-size:1.05rem;max-width:var(--measure)}
+.quicklinks{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0 1.6rem;padding:0;list-style:none}
+.quicklinks a{display:inline-block;background:var(--card);border:1px solid var(--hairline);border-radius:999px;padding:.45rem .95rem;text-decoration:none}
+.quicklinks a:hover{border-color:var(--blue-dark)}
+.day{background:var(--card);border:1px solid var(--hairline);border-radius:var(--radius);padding:1.1rem 1.3rem;margin:0 0 1rem}
+.day h2{margin:0;font-size:1.2rem}
+.day .when{margin:.15rem 0 .8rem;color:var(--stone);font-size:.9rem}
+.cols{display:grid;gap:1rem}
+@media (min-width:44rem){.cols{grid-template-columns:1fr 1fr}}
+.slot h3{margin:0 0 .3rem;font-size:1rem;line-height:1.35}
+.slot .slot-label{display:block;font-size:.75rem;font-weight:800;letter-spacing:.1em;color:var(--gold-dark)}
+.slot ul{margin:.4rem 0 0;padding-left:1.1rem;font-size:.95rem}
+.slot .soon{color:var(--stone);font-style:italic;font-size:.92rem;margin:.4rem 0 0}
+.slot .done-mark{display:none;font-size:.8rem;font-weight:700;color:var(--blue-dark);margin-left:.3rem}
+.slot.is-done .done-mark{display:inline}
+.pre{border-style:dashed}
+
+/* Footer */
+.site-footer{border-top:1px solid var(--hairline);color:var(--stone);font-size:.85rem;padding:1.4rem 0 2.2rem;text-align:center}
+.site-footer p{margin:.25rem 0}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+/* Print: grayscale, everything expanded, no interface (keeps the intent of D16) */
+@media print{
+  html{filter:grayscale(1)}
+  body{background:#fff;font-size:11pt;color:#000}
+  .site-header{background:#fff;color:#000;border-bottom:2px solid #000;padding:.5rem 0}
+  .site-header .eyebrow,.site-header .eyebrow a,.site-header p.sub{color:#333}
+  .site-header p.sub.focus,.qr figcaption{color:#333}
+  .bars,.skip,.progress-box,.pager,.qc-opts,.qc-retry,.quicklinks{display:none!important}
+  .qc-why,.js .qc-why{display:block!important}.no-js-answer,.js .no-js-answer{display:inline!important}
+  .term .term-def{display:none}
+  a{color:#000;text-decoration:underline}
+  .card,.day,.box,.qc,.quiz,details.deeper,.demo-card{break-inside:avoid;border-color:#999}
+  .prose th{background:#ddd;color:#000}
+}
+
+/* NCIT-E additions */
+.site-header :focus-visible{outline-color:var(--gold-light)}
+.unit{background:var(--card);border:1px solid var(--hairline);border-radius:var(--radius);padding:1.1rem 1.3rem;margin:0 0 1rem;border-top:5px solid var(--blue)}
+.unit h2{margin:0;font-size:1.2rem}
+.unit .when{margin:.15rem 0 .8rem;color:var(--stone);font-size:.9rem}
+.slot.practical .slot-label{color:var(--gold-dark)}
+.scope{background:var(--card);border:1px solid var(--hairline);border-left:6px solid var(--gold);border-radius:0 var(--radius) var(--radius) 0;padding:1rem 1.25rem;margin:0 0 1.4rem;font-size:1.05rem}
+.scope .label{display:block;font-size:.78rem;font-weight:800;letter-spacing:.12em;color:var(--gold-dark);margin-bottom:.25rem}
+.scope p{margin:.2rem 0;font-style:italic}
+.facts{display:grid;gap:.7rem;margin:1rem 0 1.6rem;padding:0;list-style:none}
+@media (min-width:40rem){.facts{grid-template-columns:repeat(3,1fr)}}
+.facts li{background:var(--card);border:1px solid var(--hairline);border-radius:12px;padding:.75rem .9rem;margin:0}
+.facts b{display:block;font-size:1.35rem;color:var(--ink);line-height:1.2}
+.facts span{font-size:.88rem;color:var(--stone)}
+.profile td:first-child{font-weight:700;white-space:nowrap}

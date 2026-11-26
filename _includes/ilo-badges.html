@@ -1,0 +1,1 @@
+{%- for n in include.ilos -%}{%- assign i = site.data.programme.ilos | where: "n", n | first -%}<span class="badge ilo{{ n }}" title="Learning outcome {{ n }}: {{ i.text | escape }}">ILO{{ n }}</span> {% endfor -%}

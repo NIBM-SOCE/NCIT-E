@@ -1,0 +1,38 @@
+# Words first taught in Session 1. Key: lower-case words joined by hyphens.
+# Use in pages as {% include term.html t="scope-of-practice" %}. Later sessions use these, never redefine them.
+scope-of-practice:
+  term: "scope of practice"
+  def: "The fixed statement of what a holder of the award can do. It describes competence, not who was admitted or how they were taught."
+evidence-band:
+  term: "evidence band"
+  def: "The grade band (Grade 6 to 9, O/L, or GIT and A/L) in which you showed your competence. It is recorded on your transcript. It is not a separate award and not a gate."
+pedagogical-content-knowledge:
+  term: "pedagogical content knowledge"
+  def: "Knowing a topic together with how learners come to understand it: what they get wrong, why, and which explanations and activities help."
+notional-hours:
+  term: "notional hours"
+  def: "The total time a typical candidate needs to reach the outcomes: guided hours with a tutor plus independent study. NCIT-E is 150 notional hours."
+guided-hours:
+  term: "guided hours"
+  def: "Hours spent with a tutor: contact sessions and practical sessions. NCIT-E has 60 guided hours: 45 contact and 15 practical."
+independent-study:
+  term: "independent study"
+  def: "The reading, tasks and preparation you do between sessions. It is 90 of the 150 notional hours."
+practical-session:
+  term: "practical session"
+  def: "One of the five 3-hour workshop, practical, lab or observation sessions. Each sits inside the unit whose content it teaches. A missed practical needs a documented make-up."
+syllabus-version:
+  term: "syllabus version"
+  def: "The specific published syllabus, with its year, that a lesson is taught against. During a reform transition, two versions can be in circulation at once."
+strand:
+  term: "strand"
+  def: "One of six areas of a teacher's practice that run through every NCIT level, from policy and context to professional learning."
+misconception:
+  term: "misconception"
+  def: "A belief a learner holds that makes sense to them and predicts wrongly. It is a model, not a careless error, so repeating the right answer rarely removes it."
+diagnostic-question:
+  term: "diagnostic question"
+  def: "A question built so that a learner who holds a particular misconception gives a predictable wrong answer, which shows you what they believe."
+low-resource-variant:
+  term: "low-resource variant"
+  def: "The version of an activity that works with chalk and paper, one phone, or no power. Every content unit has one."
